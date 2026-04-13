@@ -179,55 +179,95 @@ setTimeout(()=>{
 
 const parser = port.pipe(new DelimiterParser({ delimiter: '\n' }))
 
-
-parser.on('data', function (data) {
-//   console.log(data)
-  parser.pause()
-  const text = data.toString('utf8')
-  if (text.length ) {
-    console.log(text)
-  }
-  if (text == "---") {
-    state.running = !state.running;
-    if (state.running) {
-        console.log("start");
-        expData.curr=[];
-        expData.dac=[];
-        expData.volt=[];
-        expData.RunningDate = new Date().getTime();
-    }
-    else console.log("stop");
-    if (state.running) {
-        state.collect = true;
-        io.emit("status",{"status":"Running"});
-        writeJSONFile();
-    }
-    else {
-        state.collect = false;
-        io.emit("status",{"status":"Idle"});
-    }
-}
-  if (text.includes("{")){
+parser.on('data',(data)=>{
+    const text = data.toString('utf8');
     try{
-
         let a = JSON.parse(text);
-        if (state.collect)
-            {
-                io.emit("data",a);
-                expData.dac.push(a.dac);
-                expData.volt.push(a.volt);
-                expData.curr.push(a.curr);
-            }
-            else {
-                io.emit("ocp",a);
-                state.collect=true;
-                console.log(a);
-            }
+        switch (a.status){
+            case "start":
+                state.running = true;
+                state.collect = true;
+                console.log("start");
+                expData.curr=[];
+                expData.dac=[];
+                expData.volt=[];
+                expData.RunningDate = new Date().getTime();
+                io.emit("status",{"status":"Running"});
+                break;
+            case "idle":
+                state.running = false;
+                state.collect = false;
+                io.emit("status",{"status":"Idle"});
+                break;
+            default:
+                break;
         }
-    catch (Error){ }
+        if (state.collect){
+            io.emit("data",a);
+            if (a.dac !== undefined) expData.dac.push(a.dac);
+            if (a.volt !== undefined) expData.volt.push(a.volt);
+            if (a.curr !== undefined) expData.curr.push(a.curr);
+        }
+        else {
+            io.emit("ocp",a);
+            state.collect=false;
+            console.log(a);
+        }
     }
-  parser.resume();
+    catch (Error){ 
+        console.error(`not a JSON string: ${text}`);
+        // console.log(text);
+    }  
 })
+
+// parser.on('data', function (data) {
+// //   console.log(data)
+//   parser.pause()
+//   const text = data.toString('utf8')
+//   if (text.length ) {
+//     console.log(text)
+//   }
+//   if (text == "---") {
+//     state.running = !state.running;
+//     if (state.running) {
+//         console.log("start");
+//         expData.curr=[];
+//         expData.dac=[];
+//         expData.volt=[];
+//         expData.RunningDate = new Date().getTime();
+//     }
+//     else console.log("stop");
+//     if (state.running) {
+//         state.collect = true;
+//         io.emit("status",{"status":"Running"});
+//         // writeJSONFile();
+//     }
+//     else {
+//         state.collect = false;
+//         io.emit("status",{"status":"Idle"});
+//     }
+// }
+//   if (text.includes("{")){
+//     try{
+
+//         let a = JSON.parse(text);
+//         if (state.collect)
+//             {
+//                 io.emit("data",a);
+//                 expData.dac.push(a.dac);
+//                 expData.volt.push(a.volt);
+//                 expData.curr.push(a.curr);
+//             }
+//             else {
+//                 io.emit("ocp",a);
+//                 state.collect=true;
+//                 console.log(a);
+//             }
+//         }
+//     catch (Error){ }
+//     }
+//   parser.resume();
+// })
 
 
 
@@ -266,7 +306,8 @@ async function commandHandler(body) {
     })
     buffer+="/";
     console.log(buffer);
-    if (body[mode] == 5) state.collect = false;
+
+    if (body["mode"] == 5) state.collect = false;
     port.write(buffer,'utf-8',(err)=>{
         if (err) throw new Error("failed to write");
         else return 1;
