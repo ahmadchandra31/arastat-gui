@@ -1,0 +1,290 @@
+connected to DAC
+DAC value set to 2139
+DAC reference voltage:  V
+DAC resolution: 1241 bits
+connected to ADS1115
+{"status":"idle"}
+Double '/' detected, RX transfer aborted and callback triggered after 15 chars
+ASPC Setting evoked
+current word: 2
+current word: -600
+current word: 600
+current word: 10
+current word: 
+size:2401
+Step value: 1
+Double '/' detected, RX transfer aborted and callback triggered after 16 chars
+ASPC Setting evoked
+current word: 2
+current word: -600
+current word: 600
+current word: 100
+current word: 
+size:2401
+Step value: 1
+size:241
+Step value: 12
+Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+Uart RX handler called
+the command: 
+starting..
+Run no:0 of 0
+Run Parameters:
+Starting Voltage: -600
+Final Voltage: 600
+Voltage Scan Rate: 100 mV/s
+Reference Voltage: 3300 mV
+Cycles: 0
+{"dac":1302,"volt":699,"curr":1646}
+---
+{"status":"start"}
+Cycles 0 of 0
+{"dac":1302,"volt":491,"curr":1649}
+Timer started with delay 5 ms
+dac,volt,curr
+{"dac":1314,"volt":1070,"curr":1647}
+{"dac":1326,"volt":1079,"curr":1647}
+{"dac":1339,"volt":1090,"curr":1647}
+{"dac":1351,"volt":1092,"curr":1649}
+{"dac":1364,"volt":1084,"curr":1647}
+{"dac":1376,"volt":1069,"curr":1646}
+{"dac":1388,"volt":950,"curr":1647}
+{"dac":1401,"volt":875,"curr":1648}
+{"dac":1413,"volt":798,"curr":1647}
+{"dac":1426,"volt":658,"curr":1647}
+{"dac":1438,"volt":645,"curr":1647}
+{"dac":1450,"volt":528,"curr":1649}
+{"dac":1463,"volt":453,"curr":1647}
+{"dac":1475,"volt":378,"curr":1646}
+{"dac":1488,"volt":311,"curr":1647}
+{"dac":1500,"volt":252,"curr":1649}
+{"dac":1512,"volt":163,"curr":1647}
+{"dac":1525,"volt":127,"curr":1646}
+{"dac":1537,"volt":107,"curr":1648}
+{"dac":1550,"volt":92,"curr":1647}
+{"dac":1562,"volt":74,"curr":1646}
+{"dac":1574,"volt":51,"curr":1647}
+{"dac":1587,"volt":67,"curr":1648}
+{"dac":1599,"volt":31,"curr":1647}
+{"dac":1612,"volt":46,"curr":1646}
+{"dac":1624,"volt":29,"curr":1647}
+{"dac":1637,"volt":27,"curr":1649}
+{"dac":1649,"volt":18,"curr":1647}
+{"dac":1661,"volt":12,"curr":1646}
+{"dac":1674,"volt":17,"curr":1648}
+{"dac":1686,"volt":9,"curr":1648}
+{"dac":1699,"volt":22,"curr":1646}
+{"dac":1711,"volt":21,"curr":1646}
+{"dac":1723,"volt":45,"curr":1648}
+{"dac":1736,"volt":47,"curr":1647}
+{"dac":1748,"volt":69,"curr":1646}
+{"dac":1761,"volt":98,"curr":1647}
+{"dac":1773,"volt":102,"curr":1649}
+{"dac":1785,"volt":125,"curr":1647}
+{"dac":1798,"volt":179,"curr":1646}
+{"dac":1810,"volt":200,"curr":1648}
+{"dac":1823,"volt":222,"curr":1647}
+{"dac":1835,"volt":253,"curr":1646}
+{"dac":1847,"volt":274,"curr":1647}
+{"dac":1860,"volt":297,"curr":1648}
+{"dac":1872,"volt":359,"curr":1647}
+{"dac":1885,"volt":400,"curr":1646}
+{"dac":1897,"volt":476,"curr":1648}
+{"dac":1910,"volt":558,"curr":1647}
+{"dac":1922,"volt":659,"curr":1646}
+{"dac":1934,"volt":764,"curr":1647}
+{"dac":1947,"volt":895,"curr":1649}
+{"dac":1959,"volt":1029,"curr":1646}
+{"dac":1972,"volt":1131,"curr":1646}
+{"dac":1984,"volt":1250,"curr":1648}
+{"dac":1996,"volt":1339,"curr":1647}
+{"dac":2009,"volt":1420,"curr":1646}
+{"dac":2021,"volt":1506,"curr":1647}
+{"dac":2034,"volt":1574,"curr":1649}
+{"dac":2046,"volt":1626,"curr":1647}
+{"dac":2058,"volt":1665,"curr":1646}
+{"dac":2071,"volt":1682,"curr":1648}
+{"dac":2083,"volt":1691,"curr":1647}
+{"dac":2096,"volt":1702,"curr":1646}
+{"dac":2108,"volt":1715,"curr":1647}
+{"dac":2120,"volt":1726,"curr":1649}
+{"dac":2133,"volt":1752,"curr":1647}
+{"dac":2145,"volt":1791,"curr":1647}
+{"dac":2158,"volt":1835,"curr":1648}
+{"dac":2170,"volt":1879,"curr":1648}
+{"dac":2183,"volt":1940,"curr":1647}
+{"dac":2195,"volt":2009,"curr":1647}
+{"dac":2207,"volt":2094,"curr":1649}
+{"dac":2220,"volt":2182,"curr":1647}
+{"dac":2232,"volt":2272,"curr":1647}
+{"dac":2245,"volt":2375,"curr":1648}
+{"dac":2257,"volt":2502,"curr":1648}
+{"dac":2269,"volt":2627,"curr":1646}
+{"dac":2282,"volt":2735,"curr":1648}
+{"dac":2294,"volt":2820,"curr":1649}
+{"dac":2307,"volt":2926,"curr":1647}
+{"dac":2319,"volt":3030,"curr":1647}
+{"dac":2331,"volt":3111,"curr":1649}
+{"dac":2344,"volt":3160,"curr":1647}
+{"dac":2356,"volt":3191,"curr":1647}
+{"dac":2369,"volt":3217,"curr":1648}
+{"dac":2381,"volt":3243,"curr":1648}
+{"dac":2394,"volt":3269,"curr":1647}
+{"dac":2406,"volt":3278,"curr":1647}
+{"dac":2418,"volt":3284,"curr":1649}
+{"dac":2431,"volt":3294,"curr":1647}
+{"dac":2443,"volt":3306,"curr":1647}
+{"dac":2456,"volt":3321,"curr":1648}
+{"dac":2468,"volt":3321,"curr":1648}
+{"dac":2480,"volt":3306,"curr":1647}
+{"dac":2493,"volt":3319,"curr":1648}
+{"dac":2505,"volt":3310,"curr":1649}
+{"dac":2518,"volt":3278,"curr":1647}
+{"dac":2530,"volt":3263,"curr":1647}
+{"dac":2542,"volt":3218,"curr":1649}
+{"dac":2555,"volt":3172,"curr":1647}
+{"dac":2567,"volt":3135,"curr":1647}
+{"dac":2580,"volt":3073,"curr":1648}
+{"dac":2592,"volt":3011,"curr":1648}
+{"dac":2604,"volt":2936,"curr":1647}
+{"dac":2617,"volt":2845,"curr":1647}
+{"dac":2629,"volt":2728,"curr":1649}
+{"dac":2642,"volt":2598,"curr":1647}
+{"dac":2654,"volt":2498,"curr":1647}
+{"dac":2667,"volt":2402,"curr":1649}
+{"dac":2679,"volt":2328,"curr":1648}
+{"dac":2691,"volt":2264,"curr":1647}
+{"dac":2704,"volt":2222,"curr":1648}
+{"dac":2716,"volt":2212,"curr":1648}
+{"dac":2729,"volt":2222,"curr":1647}
+{"dac":2741,"volt":2234,"curr":1647}
+{"dac":2753,"volt":2241,"curr":1649}
+{"dac":2766,"volt":2246,"curr":1647}
+{"dac":2778,"volt":2231,"curr":1647}
+{"dac":2792,"volt":2190,"curr":1649}
+{"dac":2778,"volt":2127,"curr":1647}
+{"dac":2766,"volt":2060,"curr":1647}
+{"dac":2753,"volt":1986,"curr":1648}
+{"dac":2741,"volt":1896,"curr":1648}
+{"dac":2729,"volt":1801,"curr":1647}
+{"dac":2716,"volt":1685,"curr":1647}
+{"dac":2704,"volt":1574,"curr":1649}
+{"dac":2691,"volt":1474,"curr":1647}
+{"dac":2679,"volt":1375,"curr":1647}
+{"dac":2667,"volt":1269,"curr":1649}
+{"dac":2654,"volt":1153,"curr":1647}
+{"dac":2642,"volt":1075,"curr":1647}
+{"dac":2629,"volt":999,"curr":1647}
+{"dac":2617,"volt":920,"curr":1648}
+{"dac":2604,"volt":796,"curr":1647}
+{"dac":2592,"volt":694,"curr":1647}
+{"dac":2580,"volt":582,"curr":1649}
+{"dac":2567,"volt":485,"curr":1647}
+{"dac":2555,"volt":390,"curr":1647}
+{"dac":2542,"volt":288,"curr":1649}
+{"dac":2530,"volt":190,"curr":1647}
+{"dac":2518,"volt":131,"curr":1646}
+{"dac":2505,"volt":123,"curr":1648}
+{"dac":2493,"volt":88,"curr":1648}
+{"dac":2480,"volt":68,"curr":1646}
+{"dac":2468,"volt":56,"curr":1647}
+{"dac":2456,"volt":49,"curr":1648}
+{"dac":2443,"volt":32,"curr":1646}
+{"dac":2431,"volt":9,"curr":1647}
+{"dac":2418,"volt":6,"curr":1649}
+{"dac":2406,"volt":4,"curr":1647}
+{"dac":2394,"volt":9,"curr":1647}
+{"dac":2381,"volt":12,"curr":1649}
+{"dac":2369,"volt":16,"curr":1647}
+{"dac":2356,"volt":26,"curr":1646}
+{"dac":2344,"volt":31,"curr":1648}
+{"dac":2331,"volt":45,"curr":1647}
+{"dac":2319,"volt":46,"curr":1646}
+{"dac":2307,"volt":67,"curr":1648}
+{"dac":2294,"volt":71,"curr":1647}
+{"dac":2282,"volt":85,"curr":1646}
+{"dac":2269,"volt":137,"curr":1648}
+{"dac":2257,"volt":148,"curr":1647}
+{"dac":2245,"volt":190,"curr":1646}
+{"dac":2232,"volt":229,"curr":1647}
+{"dac":2220,"volt":258,"curr":1648}
+{"dac":2207,"volt":291,"curr":1646}
+{"dac":2195,"volt":365,"curr":1647}
+{"dac":2183,"volt":439,"curr":1649}
+{"dac":2170,"volt":546,"curr":1647}
+{"dac":2158,"volt":663,"curr":1646}
+{"dac":2145,"volt":827,"curr":1648}
+{"dac":2133,"volt":1008,"curr":1647}
+{"dac":2120,"volt":1180,"curr":1646}
+{"dac":2108,"volt":1343,"curr":1648}
+{"dac":2096,"volt":1465,"curr":1647}
+{"dac":2083,"volt":1538,"curr":1646}
+{"dac":2071,"volt":1629,"curr":1649}
+{"dac":2058,"volt":1666,"curr":1647}
+{"dac":2046,"volt":1661,"curr":1646}
+{"dac":2034,"volt":1652,"curr":1648}
+{"dac":2021,"volt":1640,"curr":1647}
+{"dac":2009,"volt":1639,"curr":1646}
+{"dac":1996,"volt":1655,"curr":1649}
+{"dac":1984,"volt":1690,"curr":1647}
+{"dac":1972,"volt":1732,"curr":1646}
+{"dac":1959,"volt":1784,"curr":1648}
+{"dac":1947,"volt":1874,"curr":1647}
+{"dac":1934,"volt":1982,"curr":1647}
+{"dac":1922,"volt":2085,"curr":1648}
+{"dac":1910,"volt":2186,"curr":1647}
+{"dac":1897,"volt":2284,"curr":1646}
+{"dac":1885,"volt":2384,"curr":1647}
+{"dac":1872,"volt":2502,"curr":1648}
+{"dac":1860,"volt":2610,"curr":1647}
+{"dac":1847,"volt":2724,"curr":1647}
+{"dac":1835,"volt":2822,"curr":1648}
+{"dac":1823,"volt":2912,"curr":1647}
+{"dac":1810,"volt":3009,"curr":1647}
+{"dac":1798,"volt":3077,"curr":1649}
+{"dac":1785,"volt":3137,"curr":1647}
+{"dac":1773,"volt":3168,"curr":1647}
+{"dac":1761,"volt":3201,"curr":1649}
+{"dac":1748,"volt":3218,"curr":1647}
+{"dac":1736,"volt":3237,"curr":1647}
+{"dac":1723,"volt":3259,"curr":1649}
+{"dac":1711,"volt":3267,"curr":1647}
+{"dac":1699,"volt":3284,"curr":1647}
+{"dac":1686,"volt":3283,"curr":1649}
+{"dac":1674,"volt":3302,"curr":1647}
+{"dac":1661,"volt":3317,"curr":1647}
+{"dac":1649,"volt":3319,"curr":1649}
+{"dac":1637,"volt":3336,"curr":1647}
+{"dac":1624,"volt":3342,"curr":1647}
+{"dac":1612,"volt":3343,"curr":1649}
+{"dac":1599,"volt":3343,"curr":1647}
+{"dac":1587,"volt":3329,"curr":1648}
+{"dac":1574,"volt":3319,"curr":1648}
+{"dac":1562,"volt":3300,"curr":1647}
+{"dac":1550,"volt":3287,"curr":1648}
+{"dac":1537,"volt":3262,"curr":1648}
+{"dac":1525,"volt":3235,"curr":1647}
+{"dac":1512,"volt":3206,"curr":1648}
+{"dac":1500,"volt":3175,"curr":1648}
+{"dac":1488,"volt":3151,"curr":1647}
+{"dac":1475,"volt":3115,"curr":1648}
+{"dac":1463,"volt":3083,"curr":1648}
+{"dac":1450,"volt":3050,"curr":1647}
+{"dac":1438,"volt":2984,"curr":1648}
+{"dac":1426,"volt":2919,"curr":1648}
+{"dac":1413,"volt":2872,"curr":1647}
+{"dac":1401,"volt":2799,"curr":1648}
+{"dac":1388,"volt":2732,"curr":1648}
+{"dac":1376,"volt":2610,"curr":1647}
+{"dac":1364,"volt":2530,"curr":1649}
+{"dac":1351,"volt":2420,"curr":1648}
+{"dac":1339,"volt":2323,"curr":1647}
+{"dac":1326,"volt":2215,"curr":1649}
+{"dac":1314,"volt":2088,"curr":1647}
+{"dac":1302,"volt":1938,"curr":1647}
+analysis complete:)
+---
+{"status":"idle"}
+Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+Uart RX handler called
+the command: 
