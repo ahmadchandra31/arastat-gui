@@ -182,7 +182,7 @@ const parser = port.pipe(new DelimiterParser({ delimiter: '\n' }))
 parser.on('data',(data)=>{
     const text = data.toString('utf8');
     try{
-        let a = JSON.parse(text);
+        let a = await JSON.parse(text);
         switch (a.status){
             case "start":
                 state.running = true;
@@ -216,7 +216,6 @@ parser.on('data',(data)=>{
     }
     catch (Error){ 
         console.error(`not a JSON string: ${text}`);
-        // console.log(text);
     }  
 })
 
