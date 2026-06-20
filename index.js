@@ -177,15 +177,6 @@ serialPortService.initialize().then(() => {
         })
         .catch(err => console.error('Failed to write default startup sweep:', err.message));
 
-    // Set default idle voltage after a brief pause
-    setTimeout(() => {
-        serialPortService.write("6/-300//")
-            .then(() => {
-                expData['idleVoltage'] = -300;
-                console.log("Startup idle voltage set to -300mV.");
-            })
-            .catch(err => console.error('Failed to write default idle voltage:', err.message));
-    }, 500);
 }).catch(err => {
     console.error('Serial port initialization failed:', err.message);
 });

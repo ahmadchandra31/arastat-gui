@@ -23,7 +23,7 @@ class MockSerialPort extends EventEmitter {
         this.idleVoltage = -300;
         
         // Start background OCP polling simulation on startup
-        this.startOcpSimulation();
+        // this.startOcpSimulation();
     }
 
     write(data, encoding, callback) {
@@ -88,6 +88,7 @@ class MockSerialPort extends EventEmitter {
         if (this.ocpInterval) clearInterval(this.ocpInterval);
         this.ocpInterval = setInterval(() => {
             if (!this.state.running) {
+                console.log('[Mock Serial]: Emitting background OCP data...');
                 this.emitOcpData();
             }
         }, 1500);
@@ -390,7 +391,7 @@ class SerialPortService extends EventEmitter {
             });
         });
     }
-
+    
     /**
      * Close connection
      */

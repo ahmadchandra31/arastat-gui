@@ -39,9 +39,9 @@ $(document).ready(() => {
         }
 
         // Live metrics update
-        $("#DAC").text(packet.dac);
-        $("#volt").text(Math.round(xVoltVal) + " mV");
-        $("#curr").text(yVal.toFixed(4) + " mA");
+        // $("#DAC").text(packet.dac);
+        // $("#volt").text(Math.round(xVoltVal) + " mV");
+        // $("#curr").text(yVal.toFixed(4) + " mA");
     });
 
     socket.on("ocp", (packet) => {
