@@ -1,6 +1,182 @@
 const { SerialPort } = require('serialport');
 const { DelimiterParser } = require('@serialport/parser-delimiter');
 const EventEmitter = require('events');
+const path = require('path');
+const fs = require('fs');
+
+class SerialPortService extends EventEmitter {
+    constructor() {
+        super();
+        this.port = null;
+        this.parser = null;
+        this.isConnected = false;
+        this.isMock = false;
+        
+        // Read configuration from environment
+        this.configPath = process.env.SERIAL_PORT || 'AUTO';
+        this.configBaudRate = parseInt(process.env.BAUD_RATE) || 115200;
+        this.forceMock = process.env.MOCK_SERIAL === 'true';
+    }
+
+    /**
+     * Search and auto-detect microcontrollers or USB-serial converters.
+     * @returns {Promise<string|null>}
+     */
+    async autoDetectPort() {
+        try {
+            const ports = await SerialPort.list();
+            console.log(`Available serial ports:`, ports.map(p => p.path));
+            
+            // Look for standard microcontroller interfaces
+            const targetPort = ports.find(p => {
+                const path = p.path.toLowerCase();
+                return path.includes('usbmodem') || 
+                       path.includes('ttyacm') || 
+                       path.includes('usbserial') || 
+                       path.includes('ch340') ||
+                       path.includes('cp210') ||
+                       path.includes('ftdi');
+            });
+            
+            return targetPort ? targetPort.path : null;
+        } catch (err) {
+            console.error('Failed to list serial ports:', err);
+            return null;
+        }
+    }
+
+    /**
+     * Initialize connection
+     * @returns {Promise<void>}
+     */
+    async initialize() {
+        if (this.forceMock) {
+            console.log('Force mock serial enabled. Falling back to Mock Simulation Mode.');
+            this.setupMockPort();
+            return;
+        }
+
+        let portPath = this.configPath;
+        if (portPath === 'AUTO') {
+            console.log('Attempting to auto-detect potentiostat serial port...');
+            portPath = await this.autoDetectPort();
+            if (!portPath) {
+                console.warn('No physical serial device detected. Falling back to Mock Simulation Mode.');
+                this.setupMockPort();
+                return;
+            }
+        }
+
+        console.log(`Connecting to serial device at ${portPath} (${this.configBaudRate} baud)...`);
+        
+        try {
+            this.port = new SerialPort({
+                path: portPath,
+                baudRate: this.configBaudRate,
+                autoOpen: false
+            });
+
+            this.port.on('error', (err) => {
+                console.error(`Serial port error on path ${portPath}:`, err.message);
+                this.emit('error', err);
+            });
+
+            this.port.on('close', () => {
+                console.log(`Serial port connection closed: ${portPath}`);
+                this.isConnected = false;
+                this.emit('disconnected');
+            });
+
+            return new Promise((resolve) => {
+                this.port.open((err) => {
+                    if (err) {
+                        console.error(`Failed to open serial port on path ${portPath}: ${err.message}. Falling back to Mock Simulation.`);
+                        this.setupMockPort();
+                        resolve();
+                    } else {
+                        console.log(`Serial port connection established successfully on ${portPath}`);
+                        this.isConnected = true;
+                        this.isMock = false;
+                        this.setupParser();
+                        this.emit('connected');
+                        resolve();
+                    }
+                });
+            });
+        } catch (err) {
+            console.error(`Failed to construct SerialPort for path ${portPath}: ${err.message}. Falling back to Mock Simulation.`);
+            this.setupMockPort();
+        }
+    }
+
+    /**
+     * Fallback to mock simulation if no hardware is present
+     */
+    setupMockPort() {
+        console.log('Initializing Simulated Mock Serial Device...');
+        this.port = new MockSerialPort();
+        this.isConnected = true;
+        this.isMock = true;
+        this.setupParser();
+        process.nextTick(() => {
+            this.emit('connected');
+        });
+    }
+
+    /**
+     * Setup delimiter-based parser to read data line-by-line
+     */
+    setupParser() {
+        this.parser = this.port.pipe(new DelimiterParser({ delimiter: '\n' }));
+
+        this.parser.on('data', (data) => {
+            const text = data.toString('utf8').trim();
+            if (!text) return;
+            this.emit('data', text);
+        });
+
+        this.parser.on('error', (err) => {
+            console.error('Parser error:', err);
+            this.emit('error', err);
+        });
+    }
+
+    /**
+     * Promise-wrapped send command
+     * @param {string} command
+     * @returns {Promise<void>}
+     */
+    write(command) {
+        return new Promise((resolve, reject) => {
+            if (!this.isConnected || !this.port) {
+                return reject(new Error('Serial connection is not active'));
+            }
+
+            this.port.write(command, 'utf-8', (err) => {
+                if (err) {
+                    console.error('Failed to write to serial interface:', err.message);
+                    reject(err);
+                } else {
+                    resolve();
+                }
+            });
+        });
+    }
+    
+    /**
+     * Close connection
+     */
+    async close() {
+        if (this.port) {
+            return new Promise((resolve) => {
+                this.port.close(() => {
+                    this.isConnected = false;
+                    resolve();
+                });
+            });
+        }
+    }
+}
 
 class MockSerialPort extends EventEmitter {
     constructor() {
@@ -220,6 +396,34 @@ class MockSerialPort extends EventEmitter {
         this.startOcpSimulation();
     }
 
+    runningSimulation(){
+        this.state.running = true;
+        const jsonData = await fs.readFileSync(path.join(__dirname, 'data', '2812250906.json'), 'utf8');
+        const dataArray = JSON.parse(jsonData);
+        let index = 0;
+        const intervalMs = 50; // 20Hz
+
+        this.scanInterval = setInterval(() => {
+            if (index >= dataArray.length) {
+                clearInterval(this.scanInterval);
+                this.state.running = false;
+                this.emit('data', Buffer.from(JSON.stringify({ status: "idle" }) + '\n', 'utf8'));
+                console.log('[Mock Serial]: Simulated scan completed successfully');
+                return;
+            }
+            else{                
+                const packet = JSON.stringify({
+                    dac: dataPoint.dac[index],
+                    volt: dataPoint.volt[index],
+                    curr: dataPoint.curr[index]
+                });
+                this.emit('data', Buffer.from(packet + '\n', 'utf8'));
+                index++;
+            }
+
+        }, intervalMs);
+    }
+
     pipe(dest) {
         this.on('data', (data) => dest.write(data));
         return dest;
@@ -232,180 +436,5 @@ class MockSerialPort extends EventEmitter {
         if (callback) callback(null);
     }
 }
-
-class SerialPortService extends EventEmitter {
-    constructor() {
-        super();
-        this.port = null;
-        this.parser = null;
-        this.isConnected = false;
-        this.isMock = false;
-        
-        // Read configuration from environment
-        this.configPath = process.env.SERIAL_PORT || 'AUTO';
-        this.configBaudRate = parseInt(process.env.BAUD_RATE) || 115200;
-        this.forceMock = process.env.MOCK_SERIAL === 'true';
-    }
-
-    /**
-     * Search and auto-detect microcontrollers or USB-serial converters.
-     * @returns {Promise<string|null>}
-     */
-    async autoDetectPort() {
-        try {
-            const ports = await SerialPort.list();
-            console.log(`Available serial ports:`, ports.map(p => p.path));
-            
-            // Look for standard microcontroller interfaces
-            const targetPort = ports.find(p => {
-                const path = p.path.toLowerCase();
-                return path.includes('usbmodem') || 
-                       path.includes('ttyacm') || 
-                       path.includes('usbserial') || 
-                       path.includes('ch340') ||
-                       path.includes('cp210') ||
-                       path.includes('ftdi');
-            });
-            
-            return targetPort ? targetPort.path : null;
-        } catch (err) {
-            console.error('Failed to list serial ports:', err);
-            return null;
-        }
-    }
-
-    /**
-     * Initialize connection
-     * @returns {Promise<void>}
-     */
-    async initialize() {
-        if (this.forceMock) {
-            console.log('Force mock serial enabled. Falling back to Mock Simulation Mode.');
-            this.setupMockPort();
-            return;
-        }
-
-        let portPath = this.configPath;
-        if (portPath === 'AUTO') {
-            console.log('Attempting to auto-detect potentiostat serial port...');
-            portPath = await this.autoDetectPort();
-            if (!portPath) {
-                console.warn('No physical serial device detected. Falling back to Mock Simulation Mode.');
-                this.setupMockPort();
-                return;
-            }
-        }
-
-        console.log(`Connecting to serial device at ${portPath} (${this.configBaudRate} baud)...`);
-        
-        try {
-            this.port = new SerialPort({
-                path: portPath,
-                baudRate: this.configBaudRate,
-                autoOpen: false
-            });
-
-            this.port.on('error', (err) => {
-                console.error(`Serial port error on path ${portPath}:`, err.message);
-                this.emit('error', err);
-            });
-
-            this.port.on('close', () => {
-                console.log(`Serial port connection closed: ${portPath}`);
-                this.isConnected = false;
-                this.emit('disconnected');
-            });
-
-            return new Promise((resolve) => {
-                this.port.open((err) => {
-                    if (err) {
-                        console.error(`Failed to open serial port on path ${portPath}: ${err.message}. Falling back to Mock Simulation.`);
-                        this.setupMockPort();
-                        resolve();
-                    } else {
-                        console.log(`Serial port connection established successfully on ${portPath}`);
-                        this.isConnected = true;
-                        this.isMock = false;
-                        this.setupParser();
-                        this.emit('connected');
-                        resolve();
-                    }
-                });
-            });
-        } catch (err) {
-            console.error(`Failed to construct SerialPort for path ${portPath}: ${err.message}. Falling back to Mock Simulation.`);
-            this.setupMockPort();
-        }
-    }
-
-    /**
-     * Fallback to mock simulation if no hardware is present
-     */
-    setupMockPort() {
-        console.log('Initializing Simulated Mock Serial Device...');
-        this.port = new MockSerialPort();
-        this.isConnected = true;
-        this.isMock = true;
-        this.setupParser();
-        process.nextTick(() => {
-            this.emit('connected');
-        });
-    }
-
-    /**
-     * Setup delimiter-based parser to read data line-by-line
-     */
-    setupParser() {
-        this.parser = this.port.pipe(new DelimiterParser({ delimiter: '\n' }));
-
-        this.parser.on('data', (data) => {
-            const text = data.toString('utf8').trim();
-            if (!text) return;
-            this.emit('data', text);
-        });
-
-        this.parser.on('error', (err) => {
-            console.error('Parser error:', err);
-            this.emit('error', err);
-        });
-    }
-
-    /**
-     * Promise-wrapped send command
-     * @param {string} command
-     * @returns {Promise<void>}
-     */
-    write(command) {
-        return new Promise((resolve, reject) => {
-            if (!this.isConnected || !this.port) {
-                return reject(new Error('Serial connection is not active'));
-            }
-
-            this.port.write(command, 'utf-8', (err) => {
-                if (err) {
-                    console.error('Failed to write to serial interface:', err.message);
-                    reject(err);
-                } else {
-                    resolve();
-                }
-            });
-        });
-    }
-    
-    /**
-     * Close connection
-     */
-    async close() {
-        if (this.port) {
-            return new Promise((resolve) => {
-                this.port.close(() => {
-                    this.isConnected = false;
-                    resolve();
-                });
-            });
-        }
-    }
-}
-
 // Export singleton
 module.exports = new SerialPortService();
