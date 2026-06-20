@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="ARASTAT Mission Control - Device Setup" />
     <title>Device Configuration - Arastat GUI</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
@@ -13,134 +14,164 @@
             <a href="/" class="brand" aria-label="Home">
                 <div class="logo">A</div>
                 <div>
-                    <div style="font-weight:700">Arastat GUI</div>
-                    <div style="font-size:12px;color:var(--muted)">Admin single page</div>
+                    <div class="brand-title">Arastat Mission Control</div>
+                    <div class="brand-subtitle">Potentiostat Interface • Production</div>
                 </div>
             </a>
 
             <nav aria-label="Main navigation">
                 <div class="nav-links">
                     <a class="btn" href="/">Mission Control</a>
-                    <!-- <a class="btn" href="#reports">Reports</a> -->
-                    <a class="btn" href="/setting">Settings</a>
+                    <a class="btn active" href="/setting">Settings</a>
+                    <a class="btn" href="/view">Results</a>
                 </div>
             </nav>
         </header>
 
-        <main style="grid-column:1 / -1; max-width:800px; margin:0 auto;">
+        <main style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
             <section class="hero" aria-labelledby="conf-title">
                 <div>
-                    <h1 id="conf-title">Configure Device</h1>
-                    <p style="color:var(--muted)">Set experiment parameters and device settings.</p>
+                    <h1 id="conf-title">Configure Device Setup</h1>
+                    <p style="color:var(--muted)">Update and register execution parameters directly to the physical microcontroller.</p>
                 </div>
             </section>
 
-            <section style="margin-top:16px;">
+            <section style="margin-top: 16px;">
                 <div class="panel">
-                    <h4>Experiment Parameters</h4>
+                    <h4 style="border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px;">Experiment & Hardware Parameters</h4>
                     <form id="configForm">
-                        <div class="grid">
-                            <div class="card">
-                                <h4>Mode</h4>
+                        <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 20px;">
+                            <div class="form-card">
+                                <h4>Operation Mode</h4>
                                 <select id="mode" required>
-                                    <option value="1">Linear Sweep Voltammetry</option>
-                                    <option value="2">Cyclic Voltammetry</option>
-                                    <option value="3">Chronoamperometry</option>
+                                    <option value="1">Linear Sweep Voltammetry (LSV)</option>
+                                    <option value="2" selected>Cyclic Voltammetry (CV)</option>
+                                    <option value="3">Chronoamperometry (CA)</option>
                                 </select>
                             </div>
 
-                            <div class="card">
-                                <h4>Starting Voltage (mV)</h4>
-                                <input id="startingVoltage" required value="-600" min="-1650" max="1650" type="number">
-                            </div>
-
-                            <div class="card">
-                                <h4>Final Voltage (mV)</h4>
-                                <input id="finalVoltage" required value="600" min="-1650" max="1650" type="number">
-                            </div>
-
-                            <div class="card">
+                            <div class="form-card">
                                 <h4>Scan Rate (mV/s)</h4>
-                                <select id="scanRate">
+                                <select id="scanRate" required>
                                     <option value="10">10</option>
                                     <option value="25">25</option>
                                     <option value="50">50</option>
-                                    <option value="100">100</option>
+                                    <option value="100" selected>100</option>
                                     <option value="250">250</option>
                                     <option value="500">500</option>
                                 </select>
                             </div>
 
-                            <div class="card">
-                                <h4>idle Voltage(mV)</h4>
-                                <input id="idleVoltage" required value="-600" min="-1650" max="1650" type="number">
+                            <div class="form-card">
+                                <h4>Starting Potential (mV)</h4>
+                                <input id="startingVoltage" required value="-600" min="-1650" max="1650" type="number">
                             </div>
 
-                            <div class="card">
+                            <div class="form-card">
+                                <h4>Final Potential (mV)</h4>
+                                <input id="finalVoltage" required value="600" min="-1650" max="1650" type="number">
+                            </div>
+
+                            <div class="form-card">
+                                <h4>Idle Voltage (mV)</h4>
+                                <input id="idleVoltage" required value="-300" min="-1650" max="1650" type="number">
+                            </div>
+
+                            <div class="form-card">
                                 <h4>Quiet Time (ms)</h4>
                                 <input id="quietTime" required value="1000" min="0" max="20000" type="number">
                             </div>
 
-                            <!-- <div class="card">
-                                <h4>Reference Voltage (mV)</h4>
-                                <input id="refVoltage" value="1650" type="number">
+                            <div class="form-card">
+                                <h4>Calibrate Reference OCP (mV)</h4>
+                                <input id="refVoltage" required value="1650" min="0" max="3300" type="number">
                             </div>
 
-                            <div class="card">
-                                <h4>RTIA (Ω)</h4>
-                                <input id="RTIA" value="1000" type="number">
-                            </div> -->
+                            <div class="form-card">
+                                <h4>Calibrate RTIA Resistor (Ω)</h4>
+                                <input id="RTIA" required value="1000" min="1" max="1000000" type="number">
+                            </div>
                         </div>
 
-                        <div style="margin-top:12px; display:flex; gap:8px;">
-                            <button id="submitConfig" class="btn cta" type="submit">Apply</button>
-                            <button id="resetConfig" class="btn" type="button">Reset</button>
+                        <div style="display: flex; gap: 12px; border-top: 1px solid var(--border); padding-top: 18px;">
+                            <button id="submitConfig" type="submit" class="submit-btn" style="margin: 0; flex: 1;">Apply & Register Setup</button>
+                            <button id="resetConfig" type="button" class="btn" style="padding: 10px 24px;">Reset Form</button>
                         </div>
                     </form>
                 </div>
             </section>
         </main>
 
-        <footer style="grid-column:1 / -1; margin-top:18px; color:var(--muted);">
-            <div>© <strong>Arastat GUI</strong></div>
-            <div style="color:var(--muted)">Configuration</div>
+        <footer style="grid-column: 1 / -1; margin-top: 24px;">
+            <div>© <strong>Arastat GUI</strong> — Built for high precision voltammetry analysis</div>
+            <div>v1.1.0 • Connected</div>
         </footer>
     </div>
 
     <script>
-    // jQuery is loaded via jquery.js
-    $(function(){
-        function readForm(){
-            return {
-                mode: parseInt($('#mode').val()),
-                startingVoltage: parseInt($('#startingVoltage').val()),
-                finalVoltage: parseInt($('#finalVoltage').val()),
-                scanRate: parseInt($('#scanRate').val()),
-                samplingRate: parseInt($('#samplingRate').val()),
-                quietTime: parseInt($('#quietTime').val()),
-                refVoltage: parseInt($('#refVoltage').val()),
-                RTIA: parseInt($('#RTIA').val())
-            };
-        }
+        $(function(){
+            // Load current calibration settings from LocalStorage
+            let refVal = localStorage.getItem('refVoltage') || 1650;
+            let rtiaVal = localStorage.getItem('RTIA') || 1000;
+            
+            $('#refVoltage').val(refVal);
+            $('#RTIA').val(rtiaVal);
 
-        $('#configForm').on('submit', function(e){
-            e.preventDefault();
-            const data = readForm();
-            $.ajax({
-                url: '/set',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(data),
-                dataType: 'json',
-                success: function(resp){ alert('Configuration sent'); },
-                error: function(){ alert('Failed to send configuration'); }
+            function readForm(){
+                return {
+                    mode: parseInt($('#mode').val()),
+                    startingVoltage: parseInt($('#startingVoltage').val()),
+                    finalVoltage: parseInt($('#finalVoltage').val()),
+                    scanRate: parseInt($('#scanRate').val()),
+                    quietTime: parseInt($('#quietTime').val()),
+                    idleVoltage: parseInt($('#idleVoltage').val()),
+                    refVoltage: parseInt($('#refVoltage').val()),
+                    RTIA: parseInt($('#RTIA').val())
+                };
+            }
+
+            $('#configForm').on('submit', function(e){
+                e.preventDefault();
+                const data = readForm();
+
+                // Save calibration settings locally
+                localStorage.setItem('refVoltage', data.refVoltage);
+                localStorage.setItem('RTIA', data.RTIA);
+
+                // Send OCP calibration to server
+                $.ajax({
+                    url: '/setOCP',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ "OCPVal": data.refVoltage }),
+                    dataType: 'json',
+                    error: function(xhr, status, error) {
+                        console.error('Failed to sync OCP with server:', error);
+                    }
+                });
+
+                // Send experiment settings to server
+                $.ajax({
+                    url: '/set',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    success: function(resp){ 
+                        alert('Configuration successfully applied and registered!'); 
+                    },
+                    error: function(xhr, status, error){ 
+                        alert('Failed to send configuration: ' + (xhr.responseJSON ? xhr.responseJSON.message : error)); 
+                    }
+                });
+            });
+
+            $('#resetConfig').on('click', function(){
+                $('#configForm')[0].reset();
+                $('#refVoltage').val(localStorage.getItem('refVoltage') || 1650);
+                $('#RTIA').val(localStorage.getItem('RTIA') || 1000);
             });
         });
-
-        $('#resetConfig').on('click', function(){
-            $('#configForm')[0].reset();
-        });
-    });
     </script>
 </body>
 </html>

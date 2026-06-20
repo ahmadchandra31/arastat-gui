@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="ARASTAT Mission Control - Voltammetry Results Analysis" />
+    <title>ARASTAT Results Analysis</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
-	<script src="plotly-3.3.0.min.js" charset="utf-8"></script>
+    <script src="plotly-3.3.0.min.js" charset="utf-8"></script>
     <script src="socket.io.js"></script>
     <script src="script.js"></script>
-
 </head>
 <body>
     <div class="shell">
@@ -17,8 +17,8 @@
             <a href="/" class="brand" aria-label="Home">
                 <div class="logo">A</div>
                 <div>
-                    <div style="font-weight:700">Arastat GUI</div>
-                    <div style="font-size:12px;color:var(--muted)">Admin single page</div>
+                    <div class="brand-title">Arastat Mission Control</div>
+                    <div class="brand-subtitle">Potentiostat Interface • Production</div>
                 </div>
             </a>
 
@@ -26,7 +26,7 @@
                 <div class="nav-links">
                     <a class="btn" href="/">Mission Control</a>
                     <a class="btn" href="/setting">Settings</a>
-                    <a class="btn" href="/view">Results</a>
+                    <a class="btn active" href="/view">Results</a>
                 </div>
             </nav>
         </header>
@@ -34,106 +34,101 @@
         <main id="overview">
             <section class="hero" aria-labelledby="hero-title">
                 <div>
-                    <h1 id="hero-title">Results</h1>
+                    <h1 id="hero-title">Results Analysis</h1>
+                    <p>Load, compare, and analyze historical electrochemical scan records. Calibrate calculations using custom RTIA resistances.</p>
                 </div>
-                <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
-                    <div style="font-size:12px;color:var(--muted)">Status</div>
-                    <div class="card" id="status-card" style="padding:8px 12px;border-radius:999px;min-width:120px;text-align:center;font-weight:700;background:green">
+                <div>
+                    <div id="status-card" class="idle">
                         <p id="status">idle</p>
                     </div>
                 </div>
             </section>
 
-            <section class="grid" aria-label="Quick cards">
-                <div class="card">
-                    <h3>DAC Value</h3>
+            <section class="grid" aria-label="Potentiostat Live Metrics">
+                <div class="metric-card">
+                    <h3>DAC Output Potential</h3>
                     <h4 id="DAC">---</h4>
                 </div>
-                <div class="card">
-                    <h3>Voltage</h3>
+                <div class="metric-card">
+                    <h3>Measured Voltage (V<sub>we</sub>)</h3>
                     <h4 id="volt">---</h4>
                 </div>
-                <div class="card">
-                    <h3>curr</h3>
+                <div class="metric-card">
+                    <h3>Measured Current (I<sub>we</sub>)</h3>
                     <h4 id="curr">---</h4>
                 </div>
-                <div class="card">
-                    <h3>OCP</h3>
+                <div class="metric-card">
+                    <h3>Calibrated OCP Offset</h3>
                     <h4 id="OCP">---</h4>
                 </div>
             </section>
-            <div style="display:flex;justify-content:center;">
-                <button id="checkV">Check Voltage</button>
-                <button id="setOCP">Set OCP</button>
-                <span>
-                    <button id="startMeasurement">Start Measurement</button>
-                </span>
-                <span>
-                    <button id="clearBtn">Clear</button>
-                </span>
-                <span>
-                    <button id="save">save</button>
-                </span>
+
+            <div class="action-bar">
+                <button id="checkV" title="Send single OCP check command">Check Voltage</button>
+                <button id="setOCP" title="Set current measured voltage as reference OCP">Set OCP</button>
+                <button id="startMeasurement" title="Begin sweep measurement">Start Measurement</button>
+                <button id="clearBtn" title="Clear current plots">Clear Canvas</button>
+                <button id="save" title="Save current dataset to file">Save Run</button>
             </div>
-            <section style="margin-top:14px;" class="bottom">
-                <div style="display:grid;gap:12px">
-                    <div class="card">
-                        <h3>Plot</h3>
-                        <h4>DAC vs Current</h4>
+
+            <section class="bottom">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>DAC Potential vs. Current</h3>
+                        <span>Applied potential sweep count (0 - 4095)</span>
                     </div>
+                    <div id="tester" class="plot-canvas"></div>
                 </div>
-                <div id="tester" style="width:720;height:540px;"></div>
-                <div>
-                    <h4>V vs current</h4>
-                    <div id="tester_" style="width:720;height:540px;"></div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Electrode Potential vs. Current</h3>
+                        <span>V vs Ag/AgCl (mV)</span>
+                    </div>
+                    <div id="tester_" class="plot-canvas"></div>
                 </div>
             </section>
         </main>
 
         <aside>
             <div class="panel" aria-labelledby="panel-title">
-                <h4 id="panel-title">Parameter Settings</h4>
+                <h4 id="panel-title">Data Loader & Calibration</h4>
                 
                 <div class="list" role="list">
-                        <div class="card">
-                            <h4>Filename</h4>
-                            <h5>Enter the filename</h5>
-                            <div>
-                                <select id="nameLists">
-                                    <option value="" ></option>
-                                </select>
-                            </div>
-                            <input id="name" required="true"type="text">
-                            <input type="submit" value="add" id="getName"/>
-                        </div>
-                        <div class="card">
-                            <h4>Set OCP</h4>
-                            <h5>Enter the value</h5>
-                            <input id="OCPVal" required="true"type="text">
-                            <input type="submit" value="Submit" id="setOCPVal"/>
-                        </div>
-                        <div class="card">
-                            <h4>Set RTIA</h4>
-                            <h5>Enter the value</h5>
-                            <input id="RTIA" required="true"type="text">
-                            <input type="submit" value="Submit" id="setRTIA"/>
-                        </div>
-                        
+                    <div class="form-card">
+                        <h4>Load Saved Run</h4>
+                        <h5 style="margin-bottom: 6px;">Select from registered records:</h5>
+                        <select id="nameLists">
+                            <option value="">-- Loading list... --</option>
+                        </select>
+                        <h5 style="margin: 8px 0 4px 0;">Or enter manually:</h5>
+                        <input id="name" placeholder="e.g. run_fe_01" required type="text">
+                        <button class="submit-btn" id="getName">Load & Plot Run</button>
+                    </div>
+
+                    <div class="form-card">
+                        <h4>Calibrate Reference OCP</h4>
+                        <h5>Offset potential in mV (V<sub>ref</sub> / analog ground):</h5>
+                        <input id="OCPVal" placeholder="e.g. 1650" required type="number">
+                        <button class="submit-btn" id="setOCPVal">Apply OCP Calibration</button>
+                    </div>
+
+                    <div class="form-card">
+                        <h4>Calibrate Resistor RTIA</h4>
+                        <h5>Transimpedance amplifier feedback value (Ω):</h5>
+                        <input id="RTIA" placeholder="e.g. 1000" required type="number">
+                        <button class="submit-btn" id="setRTIA">Apply RTIA Calibration</button>
+                    </div>
                 </div>
             </div>
-
-            <div style="height:12px"></div>
         </aside>
         
-
         <footer>
-            <div>© <strong>Arastat GUI</strong> — Built with a minimal layout</div>
-            <div style="color:var(--muted)">v1.0 • Lightweight</div>
+            <div>© <strong>Arastat GUI</strong> — Built for high precision voltammetry analysis</div>
+            <div>v1.1.0 • Connected</div>
         </footer>
     </div>
 
     <script>
-        // small enhancement: keyboard focus for quick actions
         document.querySelectorAll('.btn').forEach(b=>{
             b.addEventListener('keydown', e=>{
                 if(e.key === 'Enter') b.click();
