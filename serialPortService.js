@@ -221,9 +221,11 @@ class MockSerialPort extends EventEmitter {
                     // Check Voltage / OCP check
                     this.state.collect = false;
                     this.triggerSingleOcpEmit();
+
                 } else if (cmdMode === 1) {
                     // Start Measurement
-                    this.startScan();
+                    // this.startScan();
+                    this.runningSimulation();
                 }
             } else {
                 // Setting mode (e.g., 2/-600/600/10//)
@@ -396,26 +398,28 @@ class MockSerialPort extends EventEmitter {
         this.startOcpSimulation();
     }
 
-    runningSimulation(){
+    async runningSimulation(){
         this.state.running = true;
+        this.emit('data', Buffer.from(JSON.stringify({ status: "start" }) + '\n', 'utf8'));
         const jsonData = await fs.readFileSync(path.join(__dirname, 'data', '2812250906.json'), 'utf8');
         const dataArray = JSON.parse(jsonData);
         let index = 0;
         const intervalMs = 50; // 20Hz
 
         this.scanInterval = setInterval(() => {
-            if (index >= dataArray.length) {
-                clearInterval(this.scanInterval);
+            console.log(`current:${index} of ${dataArray.dac.length}`)
+            if (index >= dataArray.dac.length) {
                 this.state.running = false;
                 this.emit('data', Buffer.from(JSON.stringify({ status: "idle" }) + '\n', 'utf8'));
                 console.log('[Mock Serial]: Simulated scan completed successfully');
+                clearInterval(this.scanInterval);
                 return;
             }
             else{                
                 const packet = JSON.stringify({
-                    dac: dataPoint.dac[index],
-                    volt: dataPoint.volt[index],
-                    curr: dataPoint.curr[index]
+                    dac:  dataArray.dac[index],
+                    volt: dataArray.volt[index],
+                    curr: dataArray.curr[index]
                 });
                 this.emit('data', Buffer.from(packet + '\n', 'utf8'));
                 index++;
