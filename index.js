@@ -161,7 +161,7 @@ app.post('/getNames', (req, res) => {
 
 // Start Socket & Web Server
 server.listen(backendPort, () => {
-    console.log(`Arastat GUI server running on http://localhost:${backendPort}`);
+    console.log(`ARASTAT GUI server running on http://localhost:${backendPort}`);
 });
 
 // Setup Serial Connection and Stream Listeners
@@ -192,8 +192,8 @@ io.on('connection', (socket) => {
 // Stream serial packets to the browser clients
 serialPortService.on('data', (text) => {
     try {
-        const a = JSON.parse(text);
-        switch (a.status) {
+        const data = JSON.parse(text);
+        switch (data.status) {
             case "start":
                 state.running = true;
                 state.collect = true;
@@ -215,12 +215,12 @@ serialPortService.on('data', (text) => {
         }
         
         if (state.collect) {
-            io.emit("data", a);
-            if (a.dac !== undefined) expData.dac.push(a.dac);
-            if (a.volt !== undefined) expData.volt.push(a.volt);
-            if (a.curr !== undefined) expData.curr.push(a.curr);
+            io.emit("data", data);
+            if (data.dac !== undefined) expData.dac.push(data.dac);
+            if (data.volt !== undefined) expData.volt.push(data.volt);
+            if (data.curr !== undefined) expData.curr.push(data.curr);
         } else {
-            io.emit("ocp", a);
+            io.emit("ocp", data);
             state.collect = false;
         }
     } catch (err) {
@@ -258,7 +258,14 @@ async function settingHandler(body) {
     }
 
     console.log(`Writing configuration buffer to device: "${buffer}"`);
-    await serialPortService.write(buffer);
+    try{
+        await serialPortService.write(buffer);
+    }
+    catch(err){
+        console.error("Failed to write configuration to serial port:", err.message);
+        throw new Error("Failed to write configuration to device");     
+    }
+
 }
 
 async function commandHandler(body) {

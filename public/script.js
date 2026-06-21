@@ -46,13 +46,12 @@ $(document).ready(() => {
 
     socket.on("ocp", (packet) => {
         isupdating = false;
-        const voltVal = packet.volt - refVoltage;
-        const currVal = (packet.curr - refVoltage) / -RTIA;
 
         $("#DAC").text(packet.dac);
-        $("#volt").text(Math.round(voltVal) + " mV");
-        $("#curr").text(currVal.toFixed(4) + " mA");
+        $("#volt").text(packet.volt);
+        $("#curr").text(packet.curr);
     });
+
 
     socket.on("status", (packet) => {
         console.log("Status received:", packet.status);
@@ -464,9 +463,18 @@ $(document).ready(() => {
         } else {
             refVoltage = val;
             localStorage.setItem('refVoltage', refVoltage);
-            if ($("#OCP").length) $("#OCP").text(refVoltage + " mV");
+            if ($("#OCP").length) $("#OCP").text(refVoltage);
             alert("Reference OCP updated to: " + refVoltage + " mV");
         }
+    });
+
+    $("#resetOCP").click((e) => {
+        e.preventDefault();
+        refVoltage = 1650;
+        localStorage.setItem('refVoltage', refVoltage);
+        if ($("#OCP").length) $("#OCP").text(refVoltage);
+        if ($("#OCPVal").length) $("#OCPVal").val(refVoltage);
+        alert("Reference OCP reset to default: " + refVoltage + " mV");
     });
 
     $("#setRTIA").click((e) => {

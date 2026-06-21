@@ -340,7 +340,7 @@ button:focus {
 /* Bottom charts section */
 .bottom {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
     margin-top: 10px;
 }
@@ -449,13 +449,24 @@ aside {
 }
 
 input[type="text"],
-input[type="number"],
-select {
+input[type="number"] {
     width: 100%;
     background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 8px;
     color: #fff;
+    padding: 8px 12px;
+    font-size: 13px;
+    outline: none;
+}
+
+select {
+    width: 100%;
+    /* use a light, platform-like default for better readability on dark UI */
+    background: #ffffff;
+    color: #111111;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 8px;
     padding: 8px 12px;
     font-size: 13px;
     outline: none;
