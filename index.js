@@ -38,6 +38,12 @@ const backendPort = process.env.PORT || 3000;
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
+const logDir = path.join(__dirname, 'logs');
+const logFile = path.join(logDir, 'serial.log');
+if (!fs.existsSync(logDir)) {
+    fs.mkdirSync(logDir, { recursive: true });
+}
+
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -192,6 +198,13 @@ io.on('connection', (socket) => {
 // Stream serial packets to the browser clients
 serialPortService.on('data', (text) => {
     try {
+        fs.appendFile(logFile, `${new Date().toISOString()} ${text}\n`, (err) => {
+            if (err) {
+                console.error('Failed to write serial log:', err.message);
+            }
+        });
+
+        console.log("Received serial data:", text);
         const data = JSON.parse(text);
         switch (data.status) {
             case "start":
@@ -204,7 +217,7 @@ serialPortService.on('data', (text) => {
                 expData.RunningDate = new Date().getTime();
                 io.emit("status", { "status": "Running" });
                 break;
-            case "idle":
+            case "stop":
                 state.running = false;
                 state.collect = false;
                 console.log("[Experiment Status]: Idle");
@@ -224,7 +237,10 @@ serialPortService.on('data', (text) => {
             state.collect = false;
         }
     } catch (err) {
-        console.error(`[Serial Parsing Error]: Failed to parse incoming string "${text}":`, err.message);
+        // if (process.env.DEBUG === true) {
+        //     console.error(`"${text}":[Serial Parsing Error]: Failed to parse incoming string `, err);
+        // }
+        // else console.error(`[Serial Parsing Error]: Failed to parse incoming string "${text}":`, err.message);
     }
 });
 
@@ -262,8 +278,8 @@ async function settingHandler(body) {
         await serialPortService.write(buffer);
     }
     catch(err){
-        console.error("Failed to write configuration to serial port:", err.message);
-        throw new Error("Failed to write configuration to device");     
+        // console.error("Failed to write configuration to serial port:", err.message);
+        // throw new Error("Failed to write configuration to device");     
     }
 
 }
