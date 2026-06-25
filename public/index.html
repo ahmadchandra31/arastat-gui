@@ -91,6 +91,23 @@
         </main>
 
         <aside>
+
+            <div class="panel" aria-labelledby="usb-panel-title">
+                <h4 id="usb-panel-title">USB Device Connection</h4>
+                <div class="list" role="list">
+                    <div class="form-card">
+                        <h4>Select USB Device</h4>
+                        <select id="usbDevice">
+                            <option value="">Select device...</option>
+                            <option value="usb1">USB Device 1</option>
+                            <option value="usb2">USB Device 2</option>
+                            <option value="usb3">USB Device 3</option>
+                        </select>
+                        <button class="submit-btn" id="connectUSB">Connect</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="panel" aria-labelledby="panel-title">
                 <h4 id="panel-title">Sweep Configuration</h4>
                 
@@ -141,6 +158,11 @@
                         <h4>Quiet Time (ms)</h4>
                         <input id="quietTime" required value="1000" min="0" max="20000" type="number">
                         <button class="submit-btn" id="setTime">Set Quiet Time</button>
+                    </div>
+                    <div class="form-card">
+                        <h4>RTIA (Ω)</h4>
+                        <input id="RTIA" required value="1000000" min="1" max="1000000000" type="number">
+                        <button class="submit-btn" id="setRTIA">Set RTIA</button>
                     </div>
 
                     <div class="form-card">

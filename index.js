@@ -71,6 +71,18 @@ app.post("/set", (req, res) => {
         });
 });
 
+app.post("/log", (req, res) => {
+    console.log("Log request accepted");
+    console.log("Log data received:", req.body);
+    const logData = req.body.log;
+    if (!logData) {
+        return res.status(400).send({ status: "error", message: "Log data is required" });
+    }
+    else{
+        res.status(200).send({ status: "success", message: "Log data received" });
+    }
+}   );
+
 app.post("/getData", (req, res) => {
     res.send(expData);
 });

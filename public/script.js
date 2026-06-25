@@ -25,6 +25,8 @@ $(document).ready(() => {
         }
     });
 
+    
+
     socket.on("data", (packet) => {
         const xVal = packet.dac / 4095 * 3300 - refVoltage;
         const yVal = (packet.curr - refVoltage) / -RTIA;
@@ -79,6 +81,64 @@ $(document).ready(() => {
             console.error('Failed to sync status:', error);
         }
     });
+
+    const formatUsbDeviceLabel = (device) => {
+        if (typeof device === 'string') return device;
+        return device.label || device.name || device.path || device.id || JSON.stringify(device);
+    };
+
+    const populateUsbDevices = (devices) => {
+        const usbElement = $("#usbDevice");
+        if (!usbElement.length) return;
+
+        const options = devices.map((device) => {
+            const label = formatUsbDeviceLabel(device);
+            const value = typeof device === 'string' ? device : device.id || device.path || label;
+            return `<option value="${value}">${label}</option>`;
+        });
+
+        if (usbElement.is('select')) {
+            usbElement.empty();
+            usbElement.append('<option value="">-- Select USB Device --</option>');
+            usbElement.append(options.join(''));
+        } else if (usbElement.is('input, textarea')) {
+            usbElement.val(devices.map(formatUsbDeviceLabel).join(', '));
+        } else {
+            usbElement.text(devices.map(formatUsbDeviceLabel).join('\n'));
+        }
+    };
+
+    const getUsbDevices = () => {
+        $.ajax({
+            url: '/usbDevices',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({}),
+            dataType: 'json',
+            success: function(response) {
+                if (Array.isArray(response)) {
+                    populateUsbDevices(response);
+                } else if (response && Array.isArray(response.devices)) {
+                    populateUsbDevices(response.devices);
+                } else {
+                    console.error('Unexpected USB devices response:', response);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Failed to load USB devices:', error);
+            }
+        });
+    };
+
+    socket.on('usbDevices', (devices) => {
+        if (Array.isArray(devices)) {
+            populateUsbDevices(devices);
+        }
+    });
+
+    if ($("#usbDevice").length) {
+        getUsbDevices();
+    }
 
     // Dark layout configuration for Plotly
     const layout = {
@@ -482,12 +542,26 @@ $(document).ready(() => {
         const val = parseFloat($("#RTIA").val());
         if (isNaN(val) || val <= 0) {
             alert("Please enter a valid positive resistor value (ohms).");
-        } else {
-            RTIA = val;
-            localStorage.setItem('RTIA', RTIA);
-            alert("TIA feedback resistor updated to: " + RTIA + " ohms");
-        }
-    });
+        } 
+        else {
+            $.ajax({
+                url: '/log',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ "log": { "RTIA": val } }),
+                dataType: 'json',
+                success: function(response) {
+                    console.log('RTIA value updated on server:', response);
+                    RTIA = val;
+                    localStorage.setItem('RTIA', RTIA);
+                    alert("TIA feedback resistor updated to: " + RTIA + " ohms");
+                },
+                error: function(xhr, status, error) {
+                    console.error('Failed to update RTIA on server:', error);
+                    alert("Error updating TIA feedback resistor");
+                }
+        });
+}});
 
     const getNames = () => {
         $.ajax({
@@ -517,3 +591,4 @@ $(document).ready(() => {
         getNames();
     }
 });
+
