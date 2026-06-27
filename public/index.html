@@ -62,14 +62,12 @@
                     <h4 id="OCP">---</h4>
                 </div>
             </section>
-
             <div class="action-bar">
                 <button id="checkV" title="Send single OCP check command">Check Voltage</button>
                 <button id="setOCP" title="Set current measured voltage as reference OCP">Set OCP</button>
                 <button id="resetOCP" title="Reset reference OCP to default">Reset OCP</button>
                 <button id="startMeasurement" title="Begin sweep measurement">Start Measurement</button>
-                <button id="clearBtn" title="Clear current plots">Clear Canvas</button>
-                <button id="save" title="Save current dataset to file">Save Run</button>
+                <button id="stopMeasurement" title="Stop sweep measurement">Stop Measurement</button>
             </div>
 
             <section class="bottom">
@@ -86,6 +84,11 @@
                         <span>V vs Ag/AgCl (mV)</span>
                     </div>
                     <div id="tester_" class="plot-canvas"></div>
+                </div>
+                <div class="action-bar">
+                    <button id="turnOffDevice" title="Turn off potentiostat device">Turn Off Device</button>
+                    <button id="clearBtn" title="Clear current plots">Clear Canvas</button>
+                    <button id="save" title="Save current dataset to file">Save Run</button>
                 </div>
             </section>
         </main>

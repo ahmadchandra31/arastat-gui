@@ -254,6 +254,49 @@ $(document).ready(() => {
         });
     });
 
+    $("#stopMeasurement").click((e) => {
+        if (!isRunning) return;
+        $.ajax({
+            url: '/cmd',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ "mode": 3 }),
+            dataType: 'json',
+            success: function(response) {
+                console.log('Measurement stop command acknowledged:', response);
+                alert("Measurement stopped successfully.");
+                statusText.text("Idle");
+                statusCard.removeClass("running").addClass("idle");
+                isRunning = false;
+
+            },
+            error: function(xhr, status, error) {
+                console.error('Error stopping measurement:', error);
+                alert("Failed to stop measurement");
+            }
+        });
+    });
+
+    $("#turnOffDevice").click((e) => {
+        $.ajax({
+            url: '/cmd',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ "mode": 4 }),
+            dataType: 'json',
+            success: function(response) {
+                console.log('Device turn off command acknowledged:', response);
+                alert("Device turned off successfully.");
+                statusText.text("Idle");
+                statusCard.removeClass("running").addClass("idle");
+                isRunning = false;
+            },
+            error: function(xhr, status, error) {
+                console.error('Error turning off device:', error);
+                alert("Failed to turn off device");
+            }});
+        });
+
     const formSubmissionHandler = () => {
         if (isSubmitting) {
             alert("Another parameter configuration process is currently active.");
@@ -560,8 +603,8 @@ $(document).ready(() => {
                     console.error('Failed to update RTIA on server:', error);
                     alert("Error updating TIA feedback resistor");
                 }
-        });
-}});
+            })
+        }});
 
     const getNames = () => {
         $.ajax({
