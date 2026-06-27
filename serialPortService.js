@@ -390,7 +390,7 @@ class MockSerialPort extends EventEmitter {
         this.state.collect = false;
         
         // Emit idle status
-        this.emit('data', Buffer.from(JSON.stringify({ status: "idle" }) + '\n', 'utf8'));
+        this.emit('data', Buffer.from(JSON.stringify({ status: "stop" }) + '\n', 'utf8'));
         
         console.log('[Mock Serial]: Simulated scan completed successfully');
         
@@ -410,7 +410,7 @@ class MockSerialPort extends EventEmitter {
             console.log(`current:${index} of ${dataArray.dac.length}`)
             if (index >= dataArray.dac.length) {
                 this.state.running = false;
-                this.emit('data', Buffer.from(JSON.stringify({ status: "idle" }) + '\n', 'utf8'));
+                this.emit('data', Buffer.from(JSON.stringify({ status: "stop" }) + '\n', 'utf8'));
                 console.log('[Mock Serial]: Simulated scan completed successfully');
                 clearInterval(this.scanInterval);
                 return;

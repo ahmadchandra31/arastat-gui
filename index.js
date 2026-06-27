@@ -19,6 +19,7 @@ let state = {
     collect: true,
 };
 
+
 let expData = {
     'startingVoltage': NaN,
     'finalVoltage': NaN,
