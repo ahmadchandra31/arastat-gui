@@ -588,10 +588,10 @@ $(document).ready(() => {
         } 
         else {
             $.ajax({
-                url: '/log',
+                url: '/setRTIA',
                 type: 'POST',
                 contentType: 'application/json',
-                data: JSON.stringify({ "log": { "RTIA": val } }),
+                data: JSON.stringify({ "RTIA": val }),
                 dataType: 'json',
                 success: function(response) {
                     console.log('RTIA value updated on server:', response);

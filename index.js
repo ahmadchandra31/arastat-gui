@@ -178,6 +178,20 @@ app.post('/getNames', (req, res) => {
     });
 });
 
+app.post('/setRTIA', (req, res) => {
+    console.log("Setting RTIA:", req.body);
+    const RTIAValue = parseFloat(req.body.RTIA);
+    if (isNaN(RTIAValue)) {
+        return res.status(400).send({ status: "error", message: "Invalid RTIA value" });
+    }
+    expData["RTIA"] = RTIAValue;
+    res.status(200).send({ status: "success", message: "RTIA value set" });
+});
+
+app.post('/getData', (req, res) => {
+    res.status(200).send(expData);
+});
+
 // Start Socket & Web Server
 server.listen(backendPort, () => {
     console.log(`ARASTAT GUI server running on http://localhost:${backendPort}`);
