@@ -200,13 +200,15 @@ server.listen(backendPort, () => {
 // Setup Serial Connection and Stream Listeners
 serialPortService.initialize().then(() => {
     // Write default CV parameters on startup
-    serialPortService.write('2/-600/600/10//')
+    serialPortService.write('2/400/-600/50//')
         .then(() => {
             expData['mode'] = 2;
-            expData['startingVoltage'] = -600;
-            expData['finalVoltage'] = 600;
-            expData['scanRate'] = 10;
+            expData['startingVoltage'] = 400;
+            expData['finalVoltage'] = -600;
+            expData['scanRate'] = 50;
             console.log('Startup default scan parameters written to serial port.');
+        }).then(() => {
+            serialPortService.write('6/400//') // Set OCP to 400 mV
         })
         .catch(err => console.error('Failed to write default startup sweep:', err.message));
 
