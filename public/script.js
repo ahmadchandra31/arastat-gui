@@ -39,11 +39,6 @@ $(document).ready(() => {
         if (document.getElementById("tester_") && document.getElementById("tester_").data) {
             Plotly.extendTraces('tester_', { x: [[xVoltVal]], y: [[yVal]] }, [0]);
         }
-
-        // Live metrics update
-        // $("#DAC").text(packet.dac);
-        // $("#volt").text(Math.round(xVoltVal) + " mV");
-        // $("#curr").text(yVal.toFixed(4) + " mA");
     });
 
     socket.on("ocp", (packet) => {
@@ -130,15 +125,35 @@ $(document).ready(() => {
         });
     };
 
-    socket.on('usbDevices', (devices) => {
-        if (Array.isArray(devices)) {
-            populateUsbDevices(devices);
-        }
-    });
-
+    // Only fetch USB devices if the element exists on the page
     if ($("#usbDevice").length) {
         getUsbDevices();
     }
+
+    $("#connectUSB").click((e) => {
+        e.preventDefault();
+        const selectedDevice = $("#usbDevice").val();
+        if (!selectedDevice) {
+            alert("Please select a USB device to connect.");
+            return;
+        }
+
+        $.ajax({
+            url: '/connectUSB',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ device: selectedDevice }),
+            dataType: 'json',
+            success: function(response) {
+                console.log('USB connection response:', response);
+                alert("USB device connected successfully.");
+            },
+            error: function(xhr, status, error) {
+                console.error('Failed to connect USB device:', error);
+                alert("Failed to connect USB device: " + (xhr.responseJSON ? xhr.responseJSON.message : error));
+            }
+        });
+    });
 
     // Dark layout configuration for Plotly
     const layout = {

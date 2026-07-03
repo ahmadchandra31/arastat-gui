@@ -18,6 +18,16 @@ class SerialPortService extends EventEmitter {
         this.forceMock = process.env.MOCK_SERIAL === 'true';
     }
 
+
+    setPath(portPath) {
+        this.configPath = portPath;
+    }
+    
+    setBaudRate(baudRate) {
+        this.configBaudRate = parseInt(baudRate);
+    }
+    
+
     /**
      * Search and auto-detect microcontrollers or USB-serial converters.
      * @returns {Promise<string|null>}

@@ -25149,3 +25149,4 @@
 2026-07-02T04:26:54.367Z ASPC Voltage Scan Rate: 25 mV/s
 2026-07-02T04:26:54.370Z ASPC Number of data to transmit: 641
 2026-07-02T04:26:54.372Z Idle voltage -1650 mV
+2026-07-02T21:13:22.045Z {"status":"ocp","dac":992,"volt":800,"curr":1655}

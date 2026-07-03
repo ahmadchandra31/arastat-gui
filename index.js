@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const serialPortService = require('./serialPortService');
+const { SerialPort } = require('serialport');
 
 const ARASTAT_MODES = {
     "LINEAR_SWEEP_VOLTAMMETRY": 1,
@@ -190,6 +191,42 @@ app.post('/setRTIA', (req, res) => {
 
 app.post('/getData', (req, res) => {
     res.status(200).send(expData);
+});
+
+app.post('/usbDevices', (req, res) => {
+    SerialPort.list()
+        .then(devices => {
+            res.status(200).send({ status: "success", devices: devices });
+        })
+        .catch(err => {
+            console.error("Failed to list USB devices:", err.message);
+            res.status(500).send({ status: "error", message: "Failed to list USB devices" });
+        });
+});
+
+app.post('/connectUSB', (req, res) => {
+    const portPath = req.body.path;
+    if (!portPath) {
+        return res.status(400).send({ status: "error", message: "USB device path is required" });
+    }
+    serialPortService.setPath(portPath);
+    serialPortService.initialize()
+    .then(() => {
+            expData['mode'] = 2;
+            expData['startingVoltage'] = 400;
+            expData['finalVoltage'] = -600;
+            expData['scanRate'] = 50;
+            console.log('Startup default scan parameters written to serial port.');
+        }).then(() => {
+            serialPortService.write('6/400//') // Set OCP to 400 mV
+        })
+        .then(() => {
+            res.status(200).send({ status: "success", message: `Connected to USB device at ${portPath}` });
+        })
+        .catch(err => {
+            console.error(`Failed to connect to USB device at ${portPath}:`, err.message);
+            res.status(500).send({ status: "error", message: `Failed to connect to USB device at ${portPath}` });
+        });
 });
 
 // Start Socket & Web Server
