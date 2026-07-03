@@ -25150,3 +25150,783 @@
 2026-07-02T04:26:54.370Z ASPC Number of data to transmit: 641
 2026-07-02T04:26:54.372Z Idle voltage -1650 mV
 2026-07-02T21:13:22.045Z {"status":"ocp","dac":992,"volt":800,"curr":1655}
+2026-07-03T02:15:07.176Z Double '/' detected, RX transfer aborted and callback triggered after 15 chars
+2026-07-03T02:18:57.194Z failed to connect to DAC
+2026-07-03T02:18:57.196Z DAC reference voltage:  V
+2026-07-03T02:18:57.198Z DAC resolution: 1241 bits
+2026-07-03T02:18:57.200Z connected to ADS1115
+2026-07-03T02:18:57.202Z ASPC Setting evoked
+2026-07-03T02:18:57.203Z current word: 2
+2026-07-03T02:18:57.205Z current word: 400
+2026-07-03T02:18:57.207Z current word: -600
+2026-07-03T02:18:57.208Z current word: 50
+2026-07-03T02:18:57.209Z current word:
+2026-07-03T02:18:57.210Z size:401
+2026-07-03T02:18:57.212Z Step value: 6
+2026-07-03T02:18:57.219Z The inital voltage has been successfully. set initial voltage:400
+2026-07-03T02:18:57.220Z size:401
+2026-07-03T02:18:57.221Z Step value: 6
+2026-07-03T02:18:57.224Z failed. val: 0
+2026-07-03T02:23:09.830Z connected to DAC
+2026-07-03T02:23:09.831Z DAC value not set
+2026-07-03T02:23:09.833Z DAC reference voltage:  V
+2026-07-03T02:23:09.836Z DAC resolution: 1241 bits
+2026-07-03T02:23:09.838Z connected to ADS1115
+2026-07-03T02:23:27.925Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:27.995Z Uart RX handler called
+2026-07-03T02:23:27.996Z the command: 
+2026-07-03T02:23:27.998Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:28.002Z {"dac":2139,"volt":0,"curr":0}
+2026-07-03T02:23:37.649Z Double '/' detected, RX transfer aborted and callback triggered after 7 chars
+2026-07-03T02:23:37.691Z ASPC Setting evoked
+2026-07-03T02:23:37.691Z current word: 6
+2026-07-03T02:23:37.694Z current word: 400
+2026-07-03T02:23:37.695Z current word:
+2026-07-03T02:23:37.699Z setting voltage to 400mV DAC:2543 failed. val: 0
+2026-07-03T02:23:37.700Z completed
+2026-07-03T02:23:50.681Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:50.717Z Uart RX handler called
+2026-07-03T02:23:50.718Z the command: 
+2026-07-03T02:23:50.720Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:50.724Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:51.379Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:51.437Z Uart RX handler called
+2026-07-03T02:23:51.439Z the command: 
+2026-07-03T02:23:51.441Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:51.445Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:51.572Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:51.654Z Uart RX handler called
+2026-07-03T02:23:51.655Z the command: 
+2026-07-03T02:23:51.658Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:51.662Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:51.757Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:51.771Z Uart RX handler called
+2026-07-03T02:23:51.771Z the command: 
+2026-07-03T02:23:51.774Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:51.777Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:51.963Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:51.987Z Uart RX handler called
+2026-07-03T02:23:51.987Z the command: 
+2026-07-03T02:23:51.989Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:51.993Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:52.145Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:52.202Z Uart RX handler called
+2026-07-03T02:23:52.204Z the command: 
+2026-07-03T02:23:52.207Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:52.210Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:52.655Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:52.722Z Uart RX handler called
+2026-07-03T02:23:52.724Z the command: 
+2026-07-03T02:23:52.725Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:52.729Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:53.152Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:53.241Z Uart RX handler called
+2026-07-03T02:23:53.243Z the command: 
+2026-07-03T02:23:53.244Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:53.248Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:53.694Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:53.760Z Uart RX handler called
+2026-07-03T02:23:53.761Z the command: 
+2026-07-03T02:23:53.763Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:53.768Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:54.093Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:54.179Z Uart RX handler called
+2026-07-03T02:23:54.179Z the command: 
+2026-07-03T02:23:54.181Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:54.186Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:54.563Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:54.597Z Uart RX handler called
+2026-07-03T02:23:54.598Z the command: 
+2026-07-03T02:23:54.601Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:54.604Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:55.033Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:55.116Z Uart RX handler called
+2026-07-03T02:23:55.117Z the command: 
+2026-07-03T02:23:55.120Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:55.124Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:55.427Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:55.433Z Uart RX handler called
+2026-07-03T02:23:55.435Z the command: 
+2026-07-03T02:23:55.437Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:55.441Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:55.606Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:55.650Z Uart RX handler called
+2026-07-03T02:23:55.651Z the command: 
+2026-07-03T02:23:55.654Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:55.658Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:56.034Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:56.068Z Uart RX handler called
+2026-07-03T02:23:56.070Z the command: 
+2026-07-03T02:23:56.072Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:56.076Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:56.453Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:56.487Z Uart RX handler called
+2026-07-03T02:23:56.488Z the command: 
+2026-07-03T02:23:56.490Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:56.494Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:56.805Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:56.905Z Uart RX handler called
+2026-07-03T02:23:56.906Z the command: 
+2026-07-03T02:23:56.909Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:56.912Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:56.984Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:57.021Z Uart RX handler called
+2026-07-03T02:23:57.022Z the command: 
+2026-07-03T02:23:57.024Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:57.028Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:57.849Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:57.943Z Uart RX handler called
+2026-07-03T02:23:57.945Z the command: 
+2026-07-03T02:23:57.947Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:57.951Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:58.133Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:58.160Z Uart RX handler called
+2026-07-03T02:23:58.161Z the command: 
+2026-07-03T02:23:58.164Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:58.167Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:58.409Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:58.478Z Uart RX handler called
+2026-07-03T02:23:58.479Z the command: 
+2026-07-03T02:23:58.481Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:58.485Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:58.654Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:58.694Z Uart RX handler called
+2026-07-03T02:23:58.696Z the command: 
+2026-07-03T02:23:58.698Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:58.702Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:58.858Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:58.911Z Uart RX handler called
+2026-07-03T02:23:58.912Z the command: 
+2026-07-03T02:23:58.915Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:58.918Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:59.032Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:59.128Z Uart RX handler called
+2026-07-03T02:23:59.129Z the command: 
+2026-07-03T02:23:59.131Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:59.135Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:59.246Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:59.343Z Uart RX handler called
+2026-07-03T02:23:59.345Z the command: 
+2026-07-03T02:23:59.347Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:59.351Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:59.696Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:59.762Z Uart RX handler called
+2026-07-03T02:23:59.763Z the command: 
+2026-07-03T02:23:59.765Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:59.769Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:23:59.921Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:23:59.978Z Uart RX handler called
+2026-07-03T02:23:59.980Z the command: 
+2026-07-03T02:23:59.982Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:23:59.986Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:00.115Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:00.194Z Uart RX handler called
+2026-07-03T02:24:00.195Z the command: 
+2026-07-03T02:24:00.198Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:00.201Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:00.309Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:00.311Z Uart RX handler called
+2026-07-03T02:24:00.312Z the command: 
+2026-07-03T02:24:00.314Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:00.318Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:00.646Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:00.729Z Uart RX handler called
+2026-07-03T02:24:00.731Z the command: 
+2026-07-03T02:24:00.733Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:00.737Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:00.912Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:00.946Z Uart RX handler called
+2026-07-03T02:24:00.947Z the command: 
+2026-07-03T02:24:00.950Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:00.953Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:01.364Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:01.465Z Uart RX handler called
+2026-07-03T02:24:01.466Z the command: 
+2026-07-03T02:24:01.469Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:01.472Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:01.647Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:01.682Z Uart RX handler called
+2026-07-03T02:24:01.683Z the command: 
+2026-07-03T02:24:01.685Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:01.689Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:01.862Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:01.898Z Uart RX handler called
+2026-07-03T02:24:01.900Z the command: 
+2026-07-03T02:24:01.902Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:01.906Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:02.048Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:02.114Z Uart RX handler called
+2026-07-03T02:24:02.115Z the command: 
+2026-07-03T02:24:02.118Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:02.121Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:02.230Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:02.332Z Uart RX handler called
+2026-07-03T02:24:02.332Z the command: 
+2026-07-03T02:24:02.334Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:02.338Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:09.637Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:09.707Z Uart RX handler called
+2026-07-03T02:24:09.708Z the command: 
+2026-07-03T02:24:09.711Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:09.714Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:10.016Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:10.025Z Uart RX handler called
+2026-07-03T02:24:10.025Z the command: 
+2026-07-03T02:24:10.029Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:10.033Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:10.219Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:10.242Z Uart RX handler called
+2026-07-03T02:24:10.243Z the command: 
+2026-07-03T02:24:10.244Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:10.249Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:10.435Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:10.458Z Uart RX handler called
+2026-07-03T02:24:10.459Z the command: 
+2026-07-03T02:24:10.461Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:10.466Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:10.619Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:10.675Z Uart RX handler called
+2026-07-03T02:24:10.676Z the command: 
+2026-07-03T02:24:10.679Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:10.683Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:10.782Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:10.790Z Uart RX handler called
+2026-07-03T02:24:10.791Z the command: 
+2026-07-03T02:24:10.793Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:10.797Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:10.946Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:11.006Z Uart RX handler called
+2026-07-03T02:24:11.008Z the command: 
+2026-07-03T02:24:11.010Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:11.014Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:24:11.150Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:24:11.223Z Uart RX handler called
+2026-07-03T02:24:11.224Z the command: 
+2026-07-03T02:24:11.227Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:24:11.231Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:25:59.622Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:25:59.637Z Uart RX handler called
+2026-07-03T02:25:59.638Z the command: 
+2026-07-03T02:25:59.641Z acquiring data...
+2026-07-03T02:25:59.642Z ASPC hasn't been configured..
+2026-07-03T02:26:03.726Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:03.784Z Uart RX handler called
+2026-07-03T02:26:03.785Z the command: 
+2026-07-03T02:26:03.787Z acquiring data...
+2026-07-03T02:26:03.789Z ASPC hasn't been configured..
+2026-07-03T02:26:04.371Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:04.402Z Uart RX handler called
+2026-07-03T02:26:04.403Z the command: 
+2026-07-03T02:26:04.405Z acquiring data...
+2026-07-03T02:26:04.407Z ASPC hasn't been configured..
+2026-07-03T02:26:04.899Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:04.918Z Uart RX handler called
+2026-07-03T02:26:04.919Z the command: 
+2026-07-03T02:26:04.921Z acquiring data...
+2026-07-03T02:26:04.925Z ASPC hasn't been configured..
+2026-07-03T02:26:05.519Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:05.536Z Uart RX handler called
+2026-07-03T02:26:05.537Z the command: 
+2026-07-03T02:26:05.539Z acquiring data...
+2026-07-03T02:26:05.542Z ASPC hasn't been configured..
+2026-07-03T02:26:16.736Z Double '/' detected, RX transfer aborted and callback triggered after 5 chars
+2026-07-03T02:26:16.741Z ASPC Setting evoked
+2026-07-03T02:26:16.742Z current word: 9
+2026-07-03T02:26:16.744Z current word: 0
+2026-07-03T02:26:16.745Z current word:
+2026-07-03T02:26:16.746Z size:1
+2026-07-03T02:26:16.747Z Step value: 12
+2026-07-03T02:26:16.748Z size:121
+2026-07-03T02:26:16.749Z Step value: 12
+2026-07-03T02:26:16.756Z The inital voltage has been successfully. set initial voltage:0
+2026-07-03T02:26:17.866Z Double '/' detected, RX transfer aborted and callback triggered after 5 chars
+2026-07-03T02:26:17.872Z ASPC Setting evoked
+2026-07-03T02:26:17.874Z current word: 9
+2026-07-03T02:26:17.874Z current word: 0
+2026-07-03T02:26:17.875Z current word:
+2026-07-03T02:26:17.877Z size:1
+2026-07-03T02:26:17.878Z Step value: 12
+2026-07-03T02:26:17.878Z size:121
+2026-07-03T02:26:17.881Z Step value: 12
+2026-07-03T02:26:17.887Z The inital voltage has been successfully. set initial voltage:0
+2026-07-03T02:26:18.549Z Double '/' detected, RX transfer aborted and callback triggered after 5 chars
+2026-07-03T02:26:18.599Z ASPC Setting evoked
+2026-07-03T02:26:18.601Z current word: 9
+2026-07-03T02:26:18.602Z current word: 0
+2026-07-03T02:26:18.603Z current word:
+2026-07-03T02:26:18.604Z size:1
+2026-07-03T02:26:18.605Z Step value: 12
+2026-07-03T02:26:18.606Z size:121
+2026-07-03T02:26:18.609Z Step value: 12
+2026-07-03T02:26:18.614Z The inital voltage has been successfully. set initial voltage:0
+2026-07-03T02:26:19.070Z Double '/' detected, RX transfer aborted and callback triggered after 5 chars
+2026-07-03T02:26:19.126Z ASPC Setting evoked
+2026-07-03T02:26:19.128Z current word: 9
+2026-07-03T02:26:19.128Z current word: 0
+2026-07-03T02:26:19.129Z current word:
+2026-07-03T02:26:19.130Z size:1
+2026-07-03T02:26:19.132Z Step value: 12
+2026-07-03T02:26:19.132Z size:121
+2026-07-03T02:26:19.134Z Step value: 12
+2026-07-03T02:26:19.140Z The inital voltage has been successfully. set initial voltage:0
+2026-07-03T02:26:26.888Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:26.912Z Uart RX handler called
+2026-07-03T02:26:26.913Z the command: 
+2026-07-03T02:26:26.916Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:26.919Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:26:27.729Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:27.734Z Uart RX handler called
+2026-07-03T02:26:27.735Z the command: 
+2026-07-03T02:26:27.737Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:27.741Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:26:28.158Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:28.253Z Uart RX handler called
+2026-07-03T02:26:28.254Z the command: 
+2026-07-03T02:26:28.257Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:28.260Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:26:28.415Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:28.469Z Uart RX handler called
+2026-07-03T02:26:28.471Z the command: 
+2026-07-03T02:26:28.473Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:28.477Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:26:28.919Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:28.989Z Uart RX handler called
+2026-07-03T02:26:28.990Z the command: 
+2026-07-03T02:26:28.992Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:28.996Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:26:29.372Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:29.406Z Uart RX handler called
+2026-07-03T02:26:29.407Z the command: 
+2026-07-03T02:26:29.410Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:29.413Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:26:29.778Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:29.824Z Uart RX handler called
+2026-07-03T02:26:29.826Z the command: 
+2026-07-03T02:26:29.828Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:29.832Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:26:39.795Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:39.822Z Uart RX handler called
+2026-07-03T02:26:39.823Z the command: 
+2026-07-03T02:26:39.825Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:39.829Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:26:40.364Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:40.442Z Uart RX handler called
+2026-07-03T02:26:40.443Z the command: 
+2026-07-03T02:26:40.445Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:40.449Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:26:40.858Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:26:40.862Z Uart RX handler called
+2026-07-03T02:26:40.863Z the command: 
+2026-07-03T02:26:40.864Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:26:40.868Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:27:30.341Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:27:30.377Z Uart RX handler called
+2026-07-03T02:27:30.378Z the command: 
+2026-07-03T02:27:30.381Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:27:30.385Z {"dac":2543,"volt":0,"curr":0}
+2026-07-03T02:28:33.510Z Double '/' detected, RX transfer aborted and callback triggered after 7 chars
+2026-07-03T02:28:33.605Z ASPC Setting evoked
+2026-07-03T02:28:33.606Z current word: 6
+2026-07-03T02:28:33.608Z current word: 400
+2026-07-03T02:28:33.609Z current word:
+2026-07-03T02:28:33.614Z setting voltage to 400mV DAC:2543 failed. val: 0
+2026-07-03T02:28:33.615Z completed
+2026-07-03T02:46:15.495Z connected to DAC
+2026-07-03T02:46:15.495Z DAC value set to 2139
+2026-07-03T02:46:15.495Z DAC reference voltage:  V
+2026-07-03T02:46:15.496Z DAC resolution: 1241 bits
+2026-07-03T02:46:15.496Z Calibration Complete
+2026-07-03T02:46:15.496Z {"dac":2139,"volt":117,"curr":235}
+2026-07-03T02:46:15.497Z {"dac":2139,"volt":100,"curr":112}
+2026-07-03T02:46:15.502Z Double '/' detected, RX transfer aborted and callback triggered after 7 chars
+2026-07-03T02:46:15.574Z ASPC Setting evoked
+2026-07-03T02:46:15.576Z current word: 6
+2026-07-03T02:46:15.577Z current word: 400
+2026-07-03T02:46:15.579Z current word:
+2026-07-03T02:46:15.583Z setting voltage to 400mV DAC:2543 completed
+2026-07-03T02:46:17.665Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:17.708Z Uart RX handler called
+2026-07-03T02:46:17.709Z the command: 
+2026-07-03T02:46:17.711Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:17.714Z {"dac":2543,"volt":103,"curr":151}
+2026-07-03T02:46:18.409Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:18.427Z Uart RX handler called
+2026-07-03T02:46:18.429Z the command: 
+2026-07-03T02:46:18.432Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:18.434Z {"dac":2543,"volt":103,"curr":141}
+2026-07-03T02:46:18.768Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:18.844Z Uart RX handler called
+2026-07-03T02:46:18.845Z the command: 
+2026-07-03T02:46:18.847Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:18.850Z {"dac":2543,"volt":100,"curr":129}
+2026-07-03T02:46:18.972Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:19.060Z Uart RX handler called
+2026-07-03T02:46:19.061Z the command: 
+2026-07-03T02:46:19.063Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:19.066Z {"dac":2543,"volt":100,"curr":128}
+2026-07-03T02:46:19.145Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:19.174Z Uart RX handler called
+2026-07-03T02:46:19.175Z the command: 
+2026-07-03T02:46:19.178Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:19.181Z {"dac":2543,"volt":100,"curr":124}
+2026-07-03T02:46:19.339Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:19.390Z Uart RX handler called
+2026-07-03T02:46:19.391Z the command: 
+2026-07-03T02:46:19.393Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:19.396Z {"dac":2543,"volt":99,"curr":124}
+2026-07-03T02:46:19.523Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:19.605Z Uart RX handler called
+2026-07-03T02:46:19.606Z the command: 
+2026-07-03T02:46:19.609Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:19.612Z {"dac":2543,"volt":102,"curr":129}
+2026-07-03T02:46:19.717Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:19.720Z Uart RX handler called
+2026-07-03T02:46:19.721Z the command: 
+2026-07-03T02:46:19.724Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:19.727Z {"dac":2543,"volt":100,"curr":126}
+2026-07-03T02:46:19.911Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:19.936Z Uart RX handler called
+2026-07-03T02:46:19.937Z the command: 
+2026-07-03T02:46:19.939Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:19.942Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:20.105Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:20.151Z Uart RX handler called
+2026-07-03T02:46:20.153Z the command: 
+2026-07-03T02:46:20.155Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:20.158Z {"dac":2543,"volt":100,"curr":126}
+2026-07-03T02:46:20.299Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:20.367Z Uart RX handler called
+2026-07-03T02:46:20.368Z the command: 
+2026-07-03T02:46:20.371Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:20.374Z {"dac":2543,"volt":97,"curr":123}
+2026-07-03T02:46:20.494Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:20.582Z Uart RX handler called
+2026-07-03T02:46:20.584Z the command: 
+2026-07-03T02:46:20.586Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:20.589Z {"dac":2543,"volt":100,"curr":128}
+2026-07-03T02:46:20.678Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:20.697Z Uart RX handler called
+2026-07-03T02:46:20.699Z the command: 
+2026-07-03T02:46:20.701Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:20.704Z {"dac":2543,"volt":103,"curr":127}
+2026-07-03T02:46:20.902Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:20.913Z Uart RX handler called
+2026-07-03T02:46:20.914Z the command: 
+2026-07-03T02:46:20.917Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:20.920Z {"dac":2543,"volt":101,"curr":124}
+2026-07-03T02:46:21.096Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:21.128Z Uart RX handler called
+2026-07-03T02:46:21.129Z the command: 
+2026-07-03T02:46:21.131Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:21.134Z {"dac":2543,"volt":100,"curr":124}
+2026-07-03T02:46:21.291Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:21.343Z Uart RX handler called
+2026-07-03T02:46:21.346Z the command: 
+2026-07-03T02:46:21.348Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:21.350Z {"dac":2543,"volt":104,"curr":129}
+2026-07-03T02:46:21.495Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:21.559Z Uart RX handler called
+2026-07-03T02:46:21.560Z the command: 
+2026-07-03T02:46:21.563Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:21.566Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:21.689Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:21.774Z Uart RX handler called
+2026-07-03T02:46:21.776Z the command: 
+2026-07-03T02:46:21.778Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:21.781Z {"dac":2543,"volt":99,"curr":127}
+2026-07-03T02:46:21.884Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:21.889Z Uart RX handler called
+2026-07-03T02:46:21.891Z the command: 
+2026-07-03T02:46:21.893Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:21.896Z {"dac":2543,"volt":99,"curr":121}
+2026-07-03T02:46:22.097Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:22.105Z Uart RX handler called
+2026-07-03T02:46:22.106Z the command: 
+2026-07-03T02:46:22.109Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:22.112Z {"dac":2543,"volt":100,"curr":128}
+2026-07-03T02:46:22.292Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:22.320Z Uart RX handler called
+2026-07-03T02:46:22.322Z the command: 
+2026-07-03T02:46:22.324Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:22.327Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:22.476Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:22.536Z Uart RX handler called
+2026-07-03T02:46:22.537Z the command: 
+2026-07-03T02:46:22.540Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:22.543Z {"dac":2543,"volt":102,"curr":129}
+2026-07-03T02:46:22.690Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:22.752Z Uart RX handler called
+2026-07-03T02:46:22.753Z the command: 
+2026-07-03T02:46:22.755Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:22.759Z {"dac":2543,"volt":100,"curr":126}
+2026-07-03T02:46:22.884Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:22.967Z Uart RX handler called
+2026-07-03T02:46:22.969Z the command: 
+2026-07-03T02:46:22.971Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:22.974Z {"dac":2543,"volt":99,"curr":124}
+2026-07-03T02:46:23.141Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:23.183Z Uart RX handler called
+2026-07-03T02:46:23.184Z the command: 
+2026-07-03T02:46:23.187Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:23.190Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:23.366Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:23.398Z Uart RX handler called
+2026-07-03T02:46:23.400Z the command: 
+2026-07-03T02:46:23.402Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:23.405Z {"dac":2543,"volt":100,"curr":127}
+2026-07-03T02:46:23.590Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:23.614Z Uart RX handler called
+2026-07-03T02:46:23.615Z the command: 
+2026-07-03T02:46:23.618Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:23.621Z {"dac":2543,"volt":99,"curr":125}
+2026-07-03T02:46:23.804Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:23.830Z Uart RX handler called
+2026-07-03T02:46:23.831Z the command: 
+2026-07-03T02:46:23.833Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:23.836Z {"dac":2543,"volt":99,"curr":126}
+2026-07-03T02:46:23.998Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:24.045Z Uart RX handler called
+2026-07-03T02:46:24.047Z the command: 
+2026-07-03T02:46:24.049Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:24.052Z {"dac":2543,"volt":104,"curr":130}
+2026-07-03T02:46:24.202Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:24.261Z Uart RX handler called
+2026-07-03T02:46:24.262Z the command: 
+2026-07-03T02:46:24.265Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:24.268Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:24.407Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:24.477Z Uart RX handler called
+2026-07-03T02:46:24.478Z the command: 
+2026-07-03T02:46:24.480Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:24.483Z {"dac":2543,"volt":104,"curr":128}
+2026-07-03T02:46:24.611Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:24.692Z Uart RX handler called
+2026-07-03T02:46:24.693Z the command: 
+2026-07-03T02:46:24.696Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:24.699Z {"dac":2543,"volt":100,"curr":126}
+2026-07-03T02:46:24.805Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:24.807Z Uart RX handler called
+2026-07-03T02:46:24.809Z the command: 
+2026-07-03T02:46:24.811Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:24.814Z {"dac":2543,"volt":103,"curr":124}
+2026-07-03T02:46:25.000Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:25.023Z Uart RX handler called
+2026-07-03T02:46:25.025Z the command: 
+2026-07-03T02:46:25.027Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:25.031Z {"dac":2543,"volt":104,"curr":128}
+2026-07-03T02:46:25.224Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:25.239Z Uart RX handler called
+2026-07-03T02:46:25.240Z the command: 
+2026-07-03T02:46:25.243Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:25.246Z {"dac":2543,"volt":99,"curr":126}
+2026-07-03T02:46:25.439Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:25.455Z Uart RX handler called
+2026-07-03T02:46:25.456Z the command: 
+2026-07-03T02:46:25.458Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:25.461Z {"dac":2543,"volt":95,"curr":124}
+2026-07-03T02:46:25.635Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:25.670Z Uart RX handler called
+2026-07-03T02:46:25.672Z the command: 
+2026-07-03T02:46:25.674Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:25.677Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:25.848Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:25.886Z Uart RX handler called
+2026-07-03T02:46:25.887Z the command: 
+2026-07-03T02:46:25.890Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:25.893Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:26.062Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:26.101Z Uart RX handler called
+2026-07-03T02:46:26.103Z the command: 
+2026-07-03T02:46:26.105Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:26.108Z {"dac":2543,"volt":99,"curr":127}
+2026-07-03T02:46:26.287Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:26.317Z Uart RX handler called
+2026-07-03T02:46:26.318Z the command: 
+2026-07-03T02:46:26.321Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:26.324Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:26.492Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:26.533Z Uart RX handler called
+2026-07-03T02:46:26.534Z the command: 
+2026-07-03T02:46:26.536Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:26.539Z {"dac":2543,"volt":100,"curr":126}
+2026-07-03T02:46:26.707Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:26.748Z Uart RX handler called
+2026-07-03T02:46:26.749Z the command: 
+2026-07-03T02:46:26.752Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:26.755Z {"dac":2543,"volt":104,"curr":131}
+2026-07-03T02:46:26.920Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:26.964Z Uart RX handler called
+2026-07-03T02:46:26.965Z the command: 
+2026-07-03T02:46:26.967Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:26.971Z {"dac":2543,"volt":102,"curr":128}
+2026-07-03T02:46:27.135Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:27.179Z Uart RX handler called
+2026-07-03T02:46:27.181Z the command: 
+2026-07-03T02:46:27.183Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:27.186Z {"dac":2543,"volt":99,"curr":128}
+2026-07-03T02:46:27.350Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:27.395Z Uart RX handler called
+2026-07-03T02:46:27.397Z the command: 
+2026-07-03T02:46:27.399Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:27.402Z {"dac":2543,"volt":99,"curr":124}
+2026-07-03T02:46:27.564Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:27.610Z Uart RX handler called
+2026-07-03T02:46:27.612Z the command: 
+2026-07-03T02:46:27.614Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:27.617Z {"dac":2543,"volt":100,"curr":126}
+2026-07-03T02:46:27.748Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:27.826Z Uart RX handler called
+2026-07-03T02:46:27.827Z the command: 
+2026-07-03T02:46:27.830Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:27.833Z {"dac":2543,"volt":102,"curr":129}
+2026-07-03T02:46:27.962Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:28.042Z Uart RX handler called
+2026-07-03T02:46:28.043Z the command: 
+2026-07-03T02:46:28.045Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:28.048Z {"dac":2543,"volt":100,"curr":128}
+2026-07-03T02:46:28.289Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:28.358Z Uart RX handler called
+2026-07-03T02:46:28.359Z the command: 
+2026-07-03T02:46:28.362Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:28.365Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:31.723Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:31.800Z Uart RX handler called
+2026-07-03T02:46:31.802Z the command: 
+2026-07-03T02:46:31.804Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:31.807Z {"dac":2543,"volt":99,"curr":145}
+2026-07-03T02:46:31.998Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:32.016Z Uart RX handler called
+2026-07-03T02:46:32.018Z the command: 
+2026-07-03T02:46:32.019Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:32.023Z {"dac":2543,"volt":101,"curr":126}
+2026-07-03T02:46:32.194Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:32.231Z Uart RX handler called
+2026-07-03T02:46:32.233Z the command: 
+2026-07-03T02:46:32.235Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:32.238Z {"dac":2543,"volt":106,"curr":129}
+2026-07-03T02:46:32.407Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:32.447Z Uart RX handler called
+2026-07-03T02:46:32.448Z the command: 
+2026-07-03T02:46:32.451Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:32.454Z {"dac":2543,"volt":102,"curr":128}
+2026-07-03T02:46:32.601Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:32.663Z Uart RX handler called
+2026-07-03T02:46:32.664Z the command: 
+2026-07-03T02:46:32.666Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:32.669Z {"dac":2543,"volt":99,"curr":126}
+2026-07-03T02:46:32.785Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:32.878Z Uart RX handler called
+2026-07-03T02:46:32.880Z the command: 
+2026-07-03T02:46:32.882Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:32.885Z {"dac":2543,"volt":98,"curr":125}
+2026-07-03T02:46:32.989Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:32.993Z Uart RX handler called
+2026-07-03T02:46:32.994Z the command: 
+2026-07-03T02:46:32.997Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:33.000Z {"dac":2543,"volt":103,"curr":126}
+2026-07-03T02:46:33.193Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:33.209Z Uart RX handler called
+2026-07-03T02:46:33.210Z the command: 
+2026-07-03T02:46:33.212Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:33.215Z {"dac":2543,"volt":106,"curr":129}
+2026-07-03T02:46:33.387Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:33.424Z Uart RX handler called
+2026-07-03T02:46:33.425Z the command: 
+2026-07-03T02:46:33.428Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:33.431Z {"dac":2543,"volt":99,"curr":124}
+2026-07-03T02:46:33.602Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:33.640Z Uart RX handler called
+2026-07-03T02:46:33.641Z the command: 
+2026-07-03T02:46:33.643Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:33.646Z {"dac":2543,"volt":98,"curr":124}
+2026-07-03T02:46:33.868Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:33.956Z Uart RX handler called
+2026-07-03T02:46:33.957Z the command: 
+2026-07-03T02:46:33.960Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:33.963Z {"dac":2543,"volt":103,"curr":131}
+2026-07-03T02:46:34.125Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:34.172Z Uart RX handler called
+2026-07-03T02:46:34.173Z the command: 
+2026-07-03T02:46:34.175Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:34.179Z {"dac":2543,"volt":101,"curr":129}
+2026-07-03T02:46:34.379Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:34.387Z Uart RX handler called
+2026-07-03T02:46:34.389Z the command: 
+2026-07-03T02:46:34.391Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:34.394Z {"dac":2543,"volt":103,"curr":129}
+2026-07-03T02:46:34.760Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:34.804Z Uart RX handler called
+2026-07-03T02:46:34.806Z the command: 
+2026-07-03T02:46:34.808Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:34.811Z {"dac":2543,"volt":99,"curr":132}
+2026-07-03T02:46:35.053Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:35.120Z Uart RX handler called
+2026-07-03T02:46:35.121Z the command: 
+2026-07-03T02:46:35.124Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:35.127Z {"dac":2543,"volt":101,"curr":129}
+2026-07-03T02:46:35.329Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:35.335Z Uart RX handler called
+2026-07-03T02:46:35.337Z the command: 
+2026-07-03T02:46:35.339Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:35.342Z {"dac":2543,"volt":101,"curr":129}
+2026-07-03T02:46:35.636Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:35.652Z Uart RX handler called
+2026-07-03T02:46:35.653Z the command: 
+2026-07-03T02:46:35.656Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:35.659Z {"dac":2543,"volt":103,"curr":131}
+2026-07-03T02:46:36.024Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:36.069Z Uart RX handler called
+2026-07-03T02:46:36.070Z the command: 
+2026-07-03T02:46:36.073Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:36.076Z {"dac":2543,"volt":103,"curr":135}
+2026-07-03T02:46:36.269Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:36.284Z Uart RX handler called
+2026-07-03T02:46:36.285Z the command: 
+2026-07-03T02:46:36.287Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:36.291Z {"dac":2543,"volt":101,"curr":124}
+2026-07-03T02:46:36.515Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:36.600Z Uart RX handler called
+2026-07-03T02:46:36.601Z the command: 
+2026-07-03T02:46:36.604Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:36.607Z {"dac":2543,"volt":101,"curr":132}
+2026-07-03T02:46:36.769Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:36.816Z Uart RX handler called
+2026-07-03T02:46:36.817Z the command: 
+2026-07-03T02:46:36.819Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:36.823Z {"dac":2543,"volt":104,"curr":129}
+2026-07-03T02:46:36.997Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:37.031Z Uart RX handler called
+2026-07-03T02:46:37.033Z the command: 
+2026-07-03T02:46:37.035Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:37.038Z {"dac":2543,"volt":103,"curr":128}
+2026-07-03T02:46:37.311Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:37.348Z Uart RX handler called
+2026-07-03T02:46:37.349Z the command: 
+2026-07-03T02:46:37.351Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:37.354Z {"dac":2543,"volt":103,"curr":130}
+2026-07-03T02:46:37.842Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:37.866Z Uart RX handler called
+2026-07-03T02:46:37.867Z the command: 
+2026-07-03T02:46:37.869Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:37.873Z {"dac":2543,"volt":101,"curr":133}
+2026-07-03T02:46:38.251Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T02:46:38.282Z Uart RX handler called
+2026-07-03T02:46:38.283Z the command: 
+2026-07-03T02:46:38.286Z DAC Value, Vref(mV), I(mV)
+2026-07-03T02:46:38.289Z {"dac":2543,"volt":103,"curr":135}
+2026-07-03T03:09:13.308Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T03:09:13.340Z Uart RX handler called
+2026-07-03T03:09:13.340Z the command: 
+2026-07-03T03:09:13.342Z acquiring data...
+2026-07-03T03:09:13.344Z ASPC hasn't been configured..
+2026-07-03T03:09:18.416Z Double '/' detected, RX transfer aborted and callback triggered after 4 chars
+2026-07-03T03:09:18.494Z Uart RX handler called
+2026-07-03T03:09:18.495Z the command: 
+2026-07-03T03:09:18.497Z DAC Value, Vref(mV), I(mV)
+2026-07-03T03:09:18.501Z {"dac":2543,"volt":103,"curr":153}
+2026-07-03T03:09:34.824Z Double '/' detected, RX transfer aborted and callback triggered after 5 chars
+2026-07-03T03:09:34.839Z ASPC Setting evoked
+2026-07-03T03:09:34.840Z current word: 4
+2026-07-03T03:09:34.842Z current word: 0
+2026-07-03T03:09:34.844Z current word:
+2026-07-03T03:09:34.845Z Sample rate set to 0

@@ -10,6 +10,12 @@
     <script src="plotly-3.3.0.min.js" charset="utf-8"></script>
     <script src="socket.io.js"></script>
     <script src="script.js"></script>
+    <style>
+        /* layout for USB select + refresh button */
+        .usb-row{display:flex;align-items:center;gap:8px}
+        .usb-row select{flex:1}
+        .usb-row .refresh{width:10%}
+    </style>
 </head>
 <body>
     <div class="shell">
@@ -100,12 +106,16 @@
                 <div class="list" role="list">
                     <div class="form-card">
                         <h4>Select USB Device</h4>
+                        <div class="usb-row">
                         <select id="usbDevice">
                             <option value="">Select device...</option>
                             <option value="usb1">USB Device 1</option>
                             <option value="usb2">USB Device 2</option>
                             <option value="usb3">USB Device 3</option>
                         </select>
+                        <button class="submit-btn refresh" id="refreshUSB" title="Refresh device list">⟳</button>
+                        </div>
+
                         <button class="submit-btn" id="connectUSB">Connect</button>
                     </div>
                 </div>

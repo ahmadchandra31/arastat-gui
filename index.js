@@ -204,11 +204,19 @@ app.post('/usbDevices', (req, res) => {
         });
 });
 
-app.post('/connectUSB', (req, res) => {
+app.post('/connectUSB', async (req, res) => {
+    console.log("Connect USB request accepted:", req.body);
     const portPath = req.body.path;
     if (!portPath) {
         return res.status(400).send({ status: "error", message: "USB device path is required" });
     }
+    await serialPortService.close()
+    .then(() => {
+        console.log(`Closed existing serial port connection.`);
+    })
+    .catch(err => {
+        console.error(`Failed to close existing serial port connection:`, err.message);
+    });
     serialPortService.setPath(portPath);
     serialPortService.initialize()
     .then(() => {

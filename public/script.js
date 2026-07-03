@@ -130,6 +130,11 @@ $(document).ready(() => {
         getUsbDevices();
     }
 
+    $("#refreshUSB").click((e) => {
+        e.preventDefault();
+        getUsbDevices();
+    });
+
     $("#connectUSB").click((e) => {
         e.preventDefault();
         const selectedDevice = $("#usbDevice").val();
@@ -142,7 +147,7 @@ $(document).ready(() => {
             url: '/connectUSB',
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ device: selectedDevice }),
+            data: JSON.stringify({ path: selectedDevice }),
             dataType: 'json',
             success: function(response) {
                 console.log('USB connection response:', response);

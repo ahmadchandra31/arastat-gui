@@ -21,6 +21,7 @@ class SerialPortService extends EventEmitter {
 
     setPath(portPath) {
         this.configPath = portPath;
+        console.log(`Serial port path set to: ${portPath}`);
     }
     
     setBaudRate(baudRate) {
